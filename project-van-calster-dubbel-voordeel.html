@@ -415,6 +415,319 @@
         }
 
         /* ============================================================
+           CATALOG REFERENCE EXPLORER — scene-to-product matching
+        ============================================================ */
+        .catalog-reference {
+            overflow: hidden;
+            background: #0d1013;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+        }
+        .catalog-reference-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 28px;
+            padding: 24px 28px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .catalog-reference-kicker {
+            display: block;
+            margin-bottom: 7px;
+            color: #91afc2;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .catalog-reference-heading {
+            margin: 0;
+            color: #fff;
+            font-size: clamp(20px, 2.2vw, 28px);
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+        }
+        .catalog-reference-hint {
+            max-width: 430px;
+            margin: 0;
+            color: rgba(255,255,255,0.58);
+            font-size: 14px;
+            line-height: 1.55;
+            text-align: right;
+        }
+        .catalog-reference-visual {
+            position: relative;
+            background: #050607;
+        }
+        .catalog-reference-stage {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 2200 / 1228;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .catalog-reference-scene {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.35s ease, transform 0.35s ease;
+            user-select: none;
+        }
+        .catalog-reference-scrim {
+            position: absolute;
+            z-index: 2;
+            inset: 0;
+            background: rgba(2,5,8,0.62);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .catalog-reference-visual.is-active .catalog-reference-scene {
+            filter: brightness(0.46) blur(2px);
+            transform: scale(1.008);
+        }
+        .catalog-reference-visual.is-active .catalog-reference-scrim { opacity: 1; }
+        .catalog-hotspot {
+            position: absolute;
+            z-index: 4;
+            left: var(--hotspot-x);
+            top: var(--hotspot-y);
+            width: 46px;
+            height: 46px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            transform: translate(-50%, -50%);
+            -webkit-tap-highlight-color: transparent;
+        }
+        .catalog-hotspot-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            display: block;
+            width: 13px;
+            height: 13px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            background: #1683ff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.45);
+            transform: translate(-50%, -50%);
+            transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+        }
+        .catalog-hotspot-dot::before {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            border: 1px solid rgba(255,255,255,0.72);
+            border-radius: 50%;
+            animation: catalog-hotspot-pulse 2.2s ease-out infinite;
+        }
+        .catalog-hotspot-label {
+            position: absolute;
+            left: 50%;
+            bottom: calc(100% + 2px);
+            padding: 7px 10px;
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 5px;
+            background: rgba(7,11,15,0.9);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.2;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, 5px);
+            transition: opacity 0.18s ease, transform 0.18s ease;
+        }
+        .catalog-hotspot:hover .catalog-hotspot-label,
+        .catalog-hotspot:focus-visible .catalog-hotspot-label,
+        .catalog-hotspot.is-active .catalog-hotspot-label {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+        .catalog-hotspot:hover .catalog-hotspot-dot,
+        .catalog-hotspot:focus-visible .catalog-hotspot-dot,
+        .catalog-hotspot.is-active .catalog-hotspot-dot {
+            width: 18px;
+            height: 18px;
+            background: #0069e8;
+        }
+        .catalog-hotspot:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: -5px;
+        }
+        @keyframes catalog-hotspot-pulse {
+            0% { opacity: 0.9; transform: scale(0.65); }
+            70%, 100% { opacity: 0; transform: scale(1.45); }
+        }
+        .catalog-product-card {
+            position: absolute;
+            z-index: 5;
+            top: 5%;
+            right: 3%;
+            bottom: 5%;
+            display: flex;
+            flex-direction: column;
+            width: min(46%, 590px);
+            padding: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.24);
+            border-radius: 12px;
+            background: rgba(10,14,18,0.96);
+            box-shadow: 0 22px 70px rgba(0,0,0,0.48);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(12px) scale(0.985);
+            transition: opacity 0.24s ease, transform 0.24s ease;
+        }
+        .catalog-reference-visual[data-card-side="left"] .catalog-product-card {
+            right: auto;
+            left: 3%;
+        }
+        .catalog-reference-visual.is-active .catalog-product-card {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0) scale(1);
+        }
+        .catalog-product-topline {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 14px;
+        }
+        .catalog-product-index {
+            display: block;
+            margin-bottom: 4px;
+            color: #91afc2;
+            font-size: 11px;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .catalog-product-title {
+            margin: 0;
+            color: #fff;
+            font-size: clamp(18px, 2vw, 24px);
+            font-weight: 500;
+            line-height: 1.2;
+        }
+        .catalog-product-close {
+            display: grid;
+            place-items: center;
+            width: 36px;
+            height: 36px;
+            flex: 0 0 36px;
+            padding: 0;
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 50%;
+            background: transparent;
+            color: #fff;
+            font-size: 22px;
+            font-weight: 300;
+            line-height: 1;
+            cursor: pointer;
+        }
+        .catalog-product-close:hover { background: rgba(255,255,255,0.1); }
+        .catalog-product-close:focus-visible {
+            outline: 2px solid #91afc2;
+            outline-offset: 2px;
+        }
+        .catalog-product-media {
+            position: relative;
+            display: grid;
+            min-height: 0;
+            flex: 1;
+            place-items: center;
+            overflow: hidden;
+            border-radius: 7px;
+            background: #fff;
+        }
+        .catalog-product-media::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 26px;
+            height: 26px;
+            border: 2px solid rgba(16,30,40,0.18);
+            border-top-color: #1683ff;
+            border-radius: 50%;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            animation: catalog-product-spin 0.8s linear infinite;
+        }
+        .catalog-product-card.is-loading .catalog-product-media::after { opacity: 1; }
+        .catalog-product-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 1;
+            transition: opacity 0.18s ease;
+        }
+        .catalog-product-card.is-loading .catalog-product-image { opacity: 0; }
+        @keyframes catalog-product-spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        @media (max-width: 767.98px) {
+            .catalog-reference-header {
+                display: block;
+                padding: 20px 18px;
+            }
+            .catalog-reference-hint {
+                margin-top: 10px;
+                max-width: none;
+                text-align: left;
+            }
+            .catalog-reference-visual { padding-bottom: 0; }
+            .catalog-hotspot-label { display: none; }
+            .catalog-hotspot { width: 42px; height: 42px; }
+            .catalog-hotspot-dot { width: 12px; height: 12px; }
+            .catalog-product-card,
+            .catalog-reference-visual[data-card-side="left"] .catalog-product-card {
+                position: relative;
+                inset: auto;
+                display: none;
+                width: auto;
+                margin: 12px;
+                padding: 14px;
+                opacity: 1;
+                pointer-events: auto;
+                transform: none;
+            }
+            .catalog-reference-visual.is-active .catalog-product-card { display: flex; }
+            .catalog-product-media { min-height: 280px; }
+            .catalog-product-image { height: auto; max-height: 72vh; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .catalog-reference-scene,
+            .catalog-reference-scrim,
+            .catalog-product-card,
+            .catalog-product-image,
+            .catalog-hotspot-label,
+            .catalog-hotspot-dot { transition: none !important; }
+            .catalog-hotspot-dot::before,
+            .catalog-product-media::after { animation: none !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .catalog-reference-scene,
+            .catalog-reference-scrim,
+            .catalog-product-card,
+            .catalog-hotspot-dot,
+            .catalog-hotspot-label { transition: none !important; }
+            .catalog-hotspot-dot::before { animation: none; opacity: 0.5; }
+        }
+
+        /* ============================================================
            SOUND PLAYER ROW
         ============================================================ */
         .sound-tracks {
@@ -1644,23 +1957,56 @@
                     All sanitaryware and key installation elements are real products sourced from the client's price catalog&nbsp;— generated from those references to maintain authenticity. Once the key frames were locked, I used top-tier AI video generation models to animate each scene from those stills, applying detailed motion prompts to achieve the cinematic horror feel.
                 </p>
 
-                <!-- Two AI process videos side-by-side -->
-                <div class="process-video-pair mb-5">
-                    <div class="media-placeholder ph-16x9" style="border-radius:12px;">
-                        <div class="ph-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg>
+                <!-- Interactive client catalog references -->
+                <section class="catalog-reference mb-5" id="catalog-reference-explorer" aria-labelledby="catalog-reference-title">
+                    <div class="catalog-reference-header">
+                        <div>
+                            <span class="catalog-reference-kicker">Client catalog / 05 references</span>
+                            <h3 class="catalog-reference-heading" id="catalog-reference-title">Real products behind the frame</h3>
                         </div>
-                        <span class="ph-label">AI generation process</span>
-                        <span class="ph-ratio">Loop · no audio</span>
+                        <p class="catalog-reference-hint" id="catalog-reference-hint">Hover or tap a marker to match each item in the generated bathroom with its original catalog reference.</p>
                     </div>
-                    <div class="media-placeholder ph-16x9" style="border-radius:12px;">
-                        <div class="ph-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg>
+                    <div class="catalog-reference-visual" data-card-side="right">
+                        <div class="catalog-reference-stage" role="group" aria-label="Bathroom with five interactive product references" aria-describedby="catalog-reference-hint">
+                            <img class="catalog-reference-scene" src="assets/images/projects/van-calster/catalog-references/catalog-scene.webp" width="1800" height="1005" loading="lazy" decoding="async" alt="Generated white bathroom containing five products sourced from the Van Calster catalog" draggable="false">
+                            <span class="catalog-reference-scrim" aria-hidden="true"></span>
+
+                            <button class="catalog-hotspot" type="button" style="--hotspot-x:22%;--hotspot-y:58%;" data-product="Towel radiator" data-index="01 / 05" data-image="assets/images/projects/van-calster/catalog-references/radiatoren.webp" data-side="right" aria-label="Show the catalog reference for the towel radiator" aria-controls="catalog-product-card" aria-expanded="false">
+                                <span class="catalog-hotspot-dot" aria-hidden="true"></span>
+                                <span class="catalog-hotspot-label" aria-hidden="true">Towel radiator</span>
+                            </button>
+                            <button class="catalog-hotspot" type="button" style="--hotspot-x:38%;--hotspot-y:50%;" data-product="WC pack" data-index="02 / 05" data-image="assets/images/projects/van-calster/catalog-references/wc-packs.webp" data-side="right" aria-label="Show the catalog reference for the WC pack" aria-controls="catalog-product-card" aria-expanded="false">
+                                <span class="catalog-hotspot-dot" aria-hidden="true"></span>
+                                <span class="catalog-hotspot-label" aria-hidden="true">WC pack</span>
+                            </button>
+                            <button class="catalog-hotspot" type="button" style="--hotspot-x:45%;--hotspot-y:42%;" data-product="Shower tray" data-index="03 / 05" data-image="assets/images/projects/van-calster/catalog-references/douchebakken.webp" data-side="right" aria-label="Show the catalog reference for the shower tray" aria-controls="catalog-product-card" aria-expanded="false">
+                                <span class="catalog-hotspot-dot" aria-hidden="true"></span>
+                                <span class="catalog-hotspot-label" aria-hidden="true">Shower tray</span>
+                            </button>
+                            <button class="catalog-hotspot" type="button" style="--hotspot-x:42%;--hotspot-y:18%;" data-product="Shower column" data-index="04 / 05" data-image="assets/images/projects/van-calster/catalog-references/douchekolom.webp" data-side="right" aria-label="Show the catalog reference for the shower column" aria-controls="catalog-product-card" aria-expanded="false">
+                                <span class="catalog-hotspot-dot" aria-hidden="true"></span>
+                                <span class="catalog-hotspot-label" aria-hidden="true">Shower column</span>
+                            </button>
+                            <button class="catalog-hotspot" type="button" style="--hotspot-x:70%;--hotspot-y:67%;" data-product="Vanity set" data-index="05 / 05" data-image="assets/images/projects/van-calster/catalog-references/meubelset.webp" data-side="left" aria-label="Show the catalog reference for the vanity set" aria-controls="catalog-product-card" aria-expanded="false">
+                                <span class="catalog-hotspot-dot" aria-hidden="true"></span>
+                                <span class="catalog-hotspot-label" aria-hidden="true">Vanity set</span>
+                            </button>
                         </div>
-                        <span class="ph-label">Key frames → video output</span>
-                        <span class="ph-ratio">Loop · no audio</span>
+
+                        <aside class="catalog-product-card" id="catalog-product-card" aria-hidden="true" inert>
+                            <div class="catalog-product-topline">
+                                <div>
+                                    <span class="catalog-product-index">Catalog reference</span>
+                                    <h4 class="catalog-product-title">Product reference</h4>
+                                </div>
+                                <button class="catalog-product-close" type="button" aria-label="Close catalog reference">×</button>
+                            </div>
+                            <div class="catalog-product-media">
+                                <img class="catalog-product-image" width="1600" height="1100" alt="">
+                            </div>
+                        </aside>
                     </div>
-                </div>
+                </section>
 
                 <!-- AE scene note -->
                 <div class="row mb-3">
@@ -2772,6 +3118,123 @@
                 currentAudio.currentTime = pct * currentAudio.duration;
             });
         });
+    })();
+
+    /* =====================================================
+       CATALOG REFERENCES — interactive product hotspots
+    ===================================================== */
+    (function() {
+        const explorer = document.getElementById('catalog-reference-explorer');
+        if (!explorer) return;
+
+        const visual = explorer.querySelector('.catalog-reference-visual');
+        const hotspots = Array.from(explorer.querySelectorAll('.catalog-hotspot'));
+        const card = explorer.querySelector('.catalog-product-card');
+        const cardTitle = explorer.querySelector('.catalog-product-title');
+        const cardIndex = explorer.querySelector('.catalog-product-index');
+        const cardImage = explorer.querySelector('.catalog-product-image');
+        const closeButton = explorer.querySelector('.catalog-product-close');
+        let activeHotspot = null;
+        let pinned = false;
+
+        function setExpandedState(active) {
+            hotspots.forEach(function(hotspot) {
+                const selected = hotspot === active;
+                hotspot.classList.toggle('is-active', selected);
+                hotspot.setAttribute('aria-expanded', selected ? 'true' : 'false');
+            });
+        }
+
+        function loadProductImage(source, title) {
+            cardImage.alt = 'Client catalog reference for ' + title;
+
+            if (cardImage.dataset.source === source && cardImage.complete && cardImage.naturalWidth) {
+                card.classList.remove('is-loading');
+                return;
+            }
+
+            card.classList.add('is-loading');
+            cardImage.dataset.source = source;
+            cardImage.onload = function() {
+                card.classList.remove('is-loading');
+            };
+            cardImage.onerror = function() {
+                card.classList.remove('is-loading');
+            };
+            cardImage.src = source;
+        }
+
+        function activateProduct(hotspot, shouldPin) {
+            activeHotspot = hotspot;
+            pinned = shouldPin;
+            setExpandedState(hotspot);
+            visual.dataset.cardSide = hotspot.dataset.side;
+            cardTitle.textContent = hotspot.dataset.product;
+            cardIndex.textContent = 'Catalog reference ' + hotspot.dataset.index;
+            card.removeAttribute('aria-hidden');
+            card.inert = false;
+            visual.classList.add('is-active');
+            loadProductImage(hotspot.dataset.image, hotspot.dataset.product);
+        }
+
+        function closeProduct(restoreFocus) {
+            const previous = activeHotspot;
+            activeHotspot = null;
+            pinned = false;
+            setExpandedState(null);
+            visual.classList.remove('is-active');
+            card.setAttribute('aria-hidden', 'true');
+            card.inert = true;
+            if (restoreFocus && previous) previous.focus();
+        }
+
+        hotspots.forEach(function(hotspot) {
+            hotspot.addEventListener('pointerenter', function(event) {
+                if (event.pointerType === 'touch') return;
+                activateProduct(hotspot, false);
+            });
+            hotspot.addEventListener('focus', function() {
+                if (!pinned) activateProduct(hotspot, false);
+            });
+            hotspot.addEventListener('click', function() {
+                if (pinned && activeHotspot === hotspot) {
+                    closeProduct(false);
+                    return;
+                }
+                activateProduct(hotspot, true);
+            });
+        });
+
+        visual.addEventListener('pointermove', function(event) {
+            if (event.pointerType !== 'mouse' || pinned || !activeHotspot) return;
+
+            const bounds = activeHotspot.getBoundingClientRect();
+            const centerX = bounds.left + bounds.width / 2;
+            const centerY = bounds.top + bounds.height / 2;
+            const distance = Math.hypot(event.clientX - centerX, event.clientY - centerY);
+
+            if (distance > 50) closeProduct(false);
+        });
+        visual.addEventListener('pointerleave', function(event) {
+            if (event.pointerType === 'touch' || pinned) return;
+            closeProduct(false);
+        });
+        closeButton.addEventListener('click', function(event) {
+            event.stopPropagation();
+            closeProduct(true);
+        });
+        document.addEventListener('pointerdown', function(event) {
+            if (pinned && !explorer.contains(event.target)) closeProduct(false);
+        });
+        explorer.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && activeHotspot) {
+                event.preventDefault();
+                closeProduct(true);
+            }
+        });
+
+        card.setAttribute('aria-hidden', 'true');
+        card.inert = true;
     })();
     </script>
 
