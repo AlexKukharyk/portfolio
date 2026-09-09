@@ -203,36 +203,204 @@
         }
 
         /* ============================================================
-           STORYBOARD INSERT
+           STORYBOARD — draft-to-final shot strip
         ============================================================ */
-        .storyboard-placeholder {
-            background: #111;
-            border: 1px solid rgba(255,255,255,0.08);
+        .storyboard {
+            --shot-width: clamp(260px, 24vw, 300px);
+            --shot-gap: 24px;
+            background: #0d1013;
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 16px;
-            width: 100%;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            color: rgba(255,255,255,0.2);
-            position: relative;
             overflow: hidden;
         }
-        .storyboard-placeholder::before {
-            content: '';
+        .storyboard-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 24px 28px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .storyboard-heading {
+            margin: 0 0 6px;
+            color: #fff;
+            font-size: clamp(18px, 2vw, 22px);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+        .storyboard-hint {
+            margin: 0;
+            color: rgba(255,255,255,0.58);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .storyboard-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .storyboard-count {
+            margin-right: 12px;
+            color: #91afc2;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+        }
+        .storyboard-arrow {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .storyboard-arrow:hover:not(:disabled) {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.55);
+        }
+        .storyboard-arrow:disabled { opacity: 0.25; cursor: default; }
+        .storyboard-viewport {
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x proximity;
+            scroll-padding-inline: 28px;
+            scrollbar-width: thin;
+            scrollbar-color: #50616e #171c21;
+        }
+        .storyboard-viewport::-webkit-scrollbar { height: 6px; }
+        .storyboard-viewport::-webkit-scrollbar-track { background: #171c21; }
+        .storyboard-viewport::-webkit-scrollbar-thumb { background: #50616e; border-radius: 3px; }
+        .storyboard-track {
+            display: flex;
+            gap: var(--shot-gap);
+            width: max-content;
+            margin: 0;
+            padding: 28px;
+            list-style: none;
+        }
+        .storyboard-shot {
+            display: grid;
+            grid-template-rows: auto minmax(8em, auto) auto 1fr;
+            gap: 14px;
+            width: var(--shot-width);
+            flex: 0 0 var(--shot-width);
+            font-size: 14px;
+            scroll-snap-align: start;
+        }
+        .storyboard-shot-heading {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin: 0;
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+        .storyboard-shot-number {
+            color: #91afc2;
+            font-size: 12px;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.08em;
+        }
+        .storyboard-action {
+            margin: 0;
+            color: rgba(255,255,255,0.62);
+            font-size: inherit;
+            line-height: 1.6;
+        }
+        .storyboard-frame {
+            position: relative;
+            display: block;
+            width: 100%;
+            aspect-ratio: 1;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.16);
+            border-radius: 6px;
+            background: #e8edf0;
+            cursor: pointer;
+            isolation: isolate;
+        }
+        .storyboard-frame img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            user-select: none;
+        }
+        .storyboard-frame .storyboard-final {
             position: absolute;
             inset: 0;
-            background: repeating-linear-gradient(
-                -45deg,
-                rgba(255,255,255,0.015) 0px,
-                rgba(255,255,255,0.015) 1px,
-                transparent 1px,
-                transparent 18px
-            );
+            opacity: 0;
+            transition: opacity 0.32s ease;
         }
-        .storyboard-placeholder > * { position: relative; z-index: 1; }
+        .storyboard-frame.is-final .storyboard-final { opacity: 1; }
+        .storyboard-frame-state {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            padding: 5px 8px;
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 3px;
+            background: rgba(15,25,33,0.85);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.3;
+            letter-spacing: 0.04em;
+            pointer-events: none;
+        }
+        .storyboard-vo {
+            margin: 0;
+            padding-top: 14px;
+            border-top: 1px solid rgba(145,175,194,0.25);
+        }
+        .storyboard-vo-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #91afc2;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+        }
+        .storyboard-vo p {
+            margin: 0;
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .storyboard-vo--note p { color: rgba(255,255,255,0.5); }
+        .storyboard-frame:focus-visible,
+        .storyboard-arrow:focus-visible,
+        .storyboard-viewport:focus-visible {
+            outline: 2px solid #91afc2;
+            outline-offset: -3px;
+        }
+        @media (max-width: 575.98px) {
+            .storyboard {
+                --shot-width: min(76vw, 280px);
+                --shot-gap: 18px;
+            }
+            .storyboard-header { align-items: flex-start; padding: 20px 18px; gap: 12px; }
+            .storyboard-count { display: none; }
+            .storyboard-track { padding: 24px 18px; }
+            .storyboard-viewport { scroll-padding-inline: 18px; }
+            .storyboard-shot { grid-template-rows: auto minmax(10em, auto) auto 1fr; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .storyboard-final,
+            .storyboard-arrow { transition: none !important; }
+        }
 
         /* ============================================================
            PROCESS VIDEO PAIR
@@ -1263,19 +1431,150 @@
                         <span class="section-label">03 / Script & Storyboard</span>
                         <div class="split-heading">
                             <h2>CONCEPT &<br>STORYTELLING</h2>
-                            <p>Every scene was meticulously scripted in a storyboard in Figma&nbsp;— from narrative arc to shot transitions&nbsp;— before a single frame of footage was generated or composited.</p>
+                            <p>I mapped out each shot in Figma, pairing the action with its voiceover before generating or animating the footage.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Figma storyboard placeholder -->
-                <div class="storyboard-placeholder mb-5">
-                    <div class="ph-icon" style="width:48px;height:48px;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                <!-- Storyboard: shot action / sketch-to-final comparison / voiceover -->
+                <section class="storyboard mb-5" id="storyboard" aria-labelledby="storyboard-title">
+                    <div class="storyboard-header">
+                        <div>
+                            <h3 class="storyboard-heading" id="storyboard-title">From sketch to screen</h3>
+                            <p class="storyboard-hint" id="storyboard-hint">Hover or tap a frame to see the final shot.</p>
+                        </div>
+                        <div class="storyboard-nav" aria-label="Storyboard navigation">
+                            <span class="storyboard-count">09 FRAMES</span>
+                            <button class="storyboard-arrow" type="button" data-storyboard-prev aria-label="Previous storyboard frame" aria-controls="storyboard-viewport" disabled>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg>
+                            </button>
+                            <button class="storyboard-arrow" type="button" data-storyboard-next aria-label="Next storyboard frame" aria-controls="storyboard-viewport">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+                            </button>
+                        </div>
                     </div>
-                    <span style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;">Storyboard&nbsp;— Figma export</span>
-                    <span style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.12);">Full scene-by-scene breakdown with timing notes</span>
-                </div>
+                    <div class="storyboard-viewport" id="storyboard-viewport" tabindex="0" role="region" aria-label="Nine storyboard frames" aria-describedby="storyboard-hint">
+                        <ol class="storyboard-track">
+                            <li class="storyboard-shot">
+                                <h4 class="storyboard-shot-heading"><span class="storyboard-shot-number">01</span>Uneasy arrival</h4>
+                                <p class="storyboard-action">A slow camera move through a wrecked bathroom. Loose lamps flicker and spark; horror ambience builds, then the lights go out.</p>
+                                <button class="storyboard-frame" type="button" aria-label="Final frame for shot 01: Uneasy arrival" aria-pressed="false" aria-describedby="storyboard-hint">
+                                    <img class="storyboard-draft" src="assets/images/projects/van-calster/storyboard/drafts/shot-01.webp" width="640" height="640" loading="lazy" decoding="async" alt="Draft of a damaged bathroom with hanging lamps and a broken bathtub" draggable="false">
+                                    <img class="storyboard-final" src="assets/images/projects/van-calster/storyboard/previews/story01.webp" width="640" height="640" loading="lazy" decoding="async" alt="" aria-hidden="true" draggable="false">
+                                    <span class="storyboard-frame-state" aria-hidden="true">Draft</span>
+                                </button>
+                                <div class="storyboard-vo">
+                                    <span class="storyboard-vo-label">VO</span>
+                                    <p lang="nl">“Wordt je badkamerrenovatie<br>een ware horrorfilm?”</p>
+                                </div>
+                            </li>
+                            <li class="storyboard-shot">
+                                <h4 class="storyboard-shot-heading"><span class="storyboard-shot-number">02</span>The message</h4>
+                                <p class="storyboard-action">A flashlight sweeps across the tiled wall, revealing a message: <span lang="nl">“Laat het over aan de profs”</span>.</p>
+                                <button class="storyboard-frame" type="button" aria-label="Final frame for shot 02: The message" aria-pressed="false" aria-describedby="storyboard-hint">
+                                    <img class="storyboard-draft" src="assets/images/projects/van-calster/storyboard/drafts/shot-02.webp?v=nl-1" width="640" height="640" loading="lazy" decoding="async" alt="Draft of a flashlight illuminating a message on a tiled wall" draggable="false">
+                                    <img class="storyboard-final" src="assets/images/projects/van-calster/storyboard/previews/story02.webp" width="640" height="640" loading="lazy" decoding="async" alt="" aria-hidden="true" draggable="false">
+                                    <span class="storyboard-frame-state" aria-hidden="true">Draft</span>
+                                </button>
+                                <div class="storyboard-vo">
+                                    <span class="storyboard-vo-label">VO</span>
+                                    <p lang="nl">“Laat het over aan de profs.”</p>
+                                </div>
+                            </li>
+                            <li class="storyboard-shot">
+                                <h4 class="storyboard-shot-heading"><span class="storyboard-shot-number">03</span>Camera drop</h4>
+                                <p class="storyboard-action">The camera drops to the floor, facing the old tub. The lights flicker, then cut to black.</p>
+                                <button class="storyboard-frame" type="button" aria-label="Final frame for shot 03: Camera drop" aria-pressed="false" aria-describedby="storyboard-hint">
+                                    <img class="storyboard-draft" src="assets/images/projects/van-calster/storyboard/drafts/shot-03.webp" width="640" height="640" loading="lazy" decoding="async" alt="Low-angle bathroom draft with a hammer and crowbar in the foreground" draggable="false">
+                                    <img class="storyboard-final" src="assets/images/projects/van-calster/storyboard/previews/story03.webp" width="640" height="640" loading="lazy" decoding="async" alt="" aria-hidden="true" draggable="false">
+                                    <span class="storyboard-frame-state" aria-hidden="true">Draft</span>
+                                </button>
+                                <div class="storyboard-vo storyboard-vo--note">
+                                    <span class="storyboard-vo-label">SFX / NO VO</span>
+                                    <p>No voiceover. A heavy impact, flickering lights, then silence.</p>
+                                </div>
+                            </li>
+                            <li class="storyboard-shot">
+                                <h4 class="storyboard-shot-heading"><span class="storyboard-shot-number">04</span>The reveal</h4>
+                                <p class="storyboard-action">A worker pulls his hand away from the camera. Cut from black to the same room, brightly lit, with tools in the foreground.</p>
+                                <button class="storyboard-frame" type="button" aria-label="Final frame for shot 04: The reveal" aria-pressed="false" aria-describedby="storyboard-hint">
+                                    <img class="storyboard-draft" src="assets/images/projects/van-calster/storyboard/drafts/shot-04.webp" width="640" height="640" loading="lazy" decoding="async" alt="Draft of a faceless worker reaching toward the camera in the bathroom" draggable="false">
+                                    <img class="storyboard-final" src="assets/images/projects/van-calster/storyboard/previews/story04.webp" width="640" height="640" loading="lazy" decoding="async" alt="" aria-hidden="true" draggable="false">
+                                    <span class="storyboard-frame-state" aria-hidden="true">Draft</span>
+                                </button>
+                                <div class="storyboard-vo">
+                                    <span class="storyboard-vo-label">VO</span>
+                                    <p lang="nl">“Van Calster regelt alles”</p>
+                                </div>
+                            </li>
+                            <li class="storyboard-shot">
+                                <h4 class="storyboard-shot-heading"><span class="storyboard-shot-number">05</span>Demolition</h4>
+                                <p class="storyboard-action">Two workers dismantle the old bathtub. The camera stays low and locked in the same position.</p>
+                                <button class="storyboard-frame" type="button" aria-label="Final frame for shot 05: Demolition" aria-pressed="false" aria-describedby="storyboard-hint">
+                                    <img class="storyboard-draft" src="assets/images/projects/van-calster/storyboard/drafts/shot-05.webp" width="640" height="640" loading="lazy" decoding="async" alt="Draft of two faceless workers dismantling the bathtub" draggable="false">
+                                    <img class="storyboard-final" src="assets/images/projects/van-calster/storyboard/previews/story05.webp" width="640" height="640" loading="lazy" decoding="async" alt="" aria-hidden="true" draggable="false">
+                                    <span class="storyboard-frame-state" aria-hidden="true">Draft</span>
+                                </button>
+                                <div class="storyboard-vo">
+                                    <span class="storyboard-vo-label">VO</span>
+                                    <p lang="nl">“Nu met dubbel voordeel.”</p>
+                                </div>
+                            </li>
+                            <li class="storyboard-shot">
+                                <h4 class="storyboard-shot-heading"><span class="storyboard-shot-number">06</span>Tub removal</h4>
+                                <p class="storyboard-action">A worker carries the old bathtub out of frame; a second worker holds the other end off-camera.</p>
+                                <button class="storyboard-frame" type="button" aria-label="Final frame for shot 06: Tub removal" aria-pressed="false" aria-describedby="storyboard-hint">
+                                    <img class="storyboard-draft" src="assets/images/projects/van-calster/storyboard/drafts/shot-06.webp" width="640" height="640" loading="lazy" decoding="async" alt="Draft of a worker carrying the old bathtub out of the room" draggable="false">
+                                    <img class="storyboard-final" src="assets/images/projects/van-calster/storyboard/previews/story06.webp" width="640" height="640" loading="lazy" decoding="async" alt="" aria-hidden="true" draggable="false">
+                                    <span class="storyboard-frame-state" aria-hidden="true">Draft</span>
+                                </button>
+                                <div class="storyboard-vo">
+                                    <span class="storyboard-vo-label">VO</span>
+                                    <p lang="nl">“Gratis uitbraak van je oude bad.”</p>
+                                </div>
+                            </li>
+                            <li class="storyboard-shot">
+                                <h4 class="storyboard-shot-heading"><span class="storyboard-shot-number">07</span>Cleared space</h4>
+                                <p class="storyboard-action">The same locked-off view, now empty. The tub is gone, leaving an exposed wall and demolition debris.</p>
+                                <button class="storyboard-frame" type="button" aria-label="Final frame for shot 07: Cleared space" aria-pressed="false" aria-describedby="storyboard-hint">
+                                    <img class="storyboard-draft" src="assets/images/projects/van-calster/storyboard/drafts/shot-07.webp" width="640" height="640" loading="lazy" decoding="async" alt="Draft of the bathroom after the old bathtub has been removed" draggable="false">
+                                    <img class="storyboard-final" src="assets/images/projects/van-calster/storyboard/previews/story07.webp" width="640" height="640" loading="lazy" decoding="async" alt="" aria-hidden="true" draggable="false">
+                                    <span class="storyboard-frame-state" aria-hidden="true">Draft</span>
+                                </button>
+                                <div class="storyboard-vo storyboard-vo--note">
+                                    <span class="storyboard-vo-label">VO / CONTINUED</span>
+                                    <p>The previous line continues over the cleared space.</p>
+                                </div>
+                            </li>
+                            <li class="storyboard-shot">
+                                <h4 class="storyboard-shot-heading"><span class="storyboard-shot-number">08</span>Transformation</h4>
+                                <p class="storyboard-action">Match cut to the finished bathroom: a walk-in shower, new sanitaryware and fitted furniture.</p>
+                                <button class="storyboard-frame" type="button" aria-label="Final frame for shot 08: Transformation" aria-pressed="false" aria-describedby="storyboard-hint">
+                                    <img class="storyboard-draft" src="assets/images/projects/van-calster/storyboard/drafts/shot-08.webp" width="640" height="640" loading="lazy" decoding="async" alt="Draft of the renovated bathroom with a walk-in shower and new vanity" draggable="false">
+                                    <img class="storyboard-final" src="assets/images/projects/van-calster/storyboard/previews/story08.webp" width="640" height="640" loading="lazy" decoding="async" alt="" aria-hidden="true" draggable="false">
+                                    <span class="storyboard-frame-state" aria-hidden="true">Draft</span>
+                                </button>
+                                <div class="storyboard-vo">
+                                    <span class="storyboard-vo-label">VO</span>
+                                    <p lang="nl">“en veertig procent korting op sanitair”</p>
+                                </div>
+                            </li>
+                            <li class="storyboard-shot">
+                                <h4 class="storyboard-shot-heading"><span class="storyboard-shot-number">09</span>The offer</h4>
+                                <p class="storyboard-action">The offer packshot closes the spot: hanging tags, the broken bathtub, and a call to request a quote.</p>
+                                <button class="storyboard-frame" type="button" aria-label="Final frame for shot 09: The offer" aria-pressed="false" aria-describedby="storyboard-hint">
+                                    <img class="storyboard-draft" src="assets/images/projects/van-calster/storyboard/drafts/shot-09.webp" width="640" height="640" loading="lazy" decoding="async" alt="Flat offer draft with two blank hanging tags and a broken bathtub" draggable="false">
+                                    <img class="storyboard-final" src="assets/images/projects/van-calster/storyboard/previews/story09.webp" width="640" height="640" loading="lazy" decoding="async" alt="" aria-hidden="true" draggable="false">
+                                    <span class="storyboard-frame-state" aria-hidden="true">Draft</span>
+                                </button>
+                                <div class="storyboard-vo">
+                                    <span class="storyboard-vo-label">VO</span>
+                                    <p lang="nl">“Badkamerrenovatie met dubbele voordelen<br>Vraag je offerte aan.”</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
 
                 <!-- Scene-by-scene breakdown -->
                 <div class="row mb-5">
@@ -1912,6 +2211,97 @@
     <script src="assets/js/main.js"></script>
 
     <script>
+    /* =====================================================
+       STORYBOARD — hover, touch and keyboard comparisons
+    ===================================================== */
+    (function() {
+        const board = document.getElementById('storyboard');
+        if (!board) return;
+        const viewport = board.querySelector('.storyboard-viewport');
+        const track = board.querySelector('.storyboard-track');
+        const previous = board.querySelector('[data-storyboard-prev]');
+        const next = board.querySelector('[data-storyboard-next]');
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        board.querySelectorAll('.storyboard-frame').forEach(function(frame) {
+            const finalImage = frame.querySelector('.storyboard-final');
+            const label = frame.querySelector('.storyboard-frame-state');
+            let ready = finalImage.complete && finalImage.naturalWidth > 0;
+            let hovered = false;
+            let pinned = false;
+
+            function updateFrame() {
+                const showFinal = ready && (hovered || pinned);
+                frame.classList.toggle('is-final', showFinal);
+                frame.setAttribute('aria-pressed', String(showFinal));
+                label.textContent = showFinal ? 'Final frame' : 'Draft';
+            }
+
+            function prepareFinal() {
+                finalImage.loading = 'eager';
+            }
+
+            finalImage.addEventListener('load', function() {
+                ready = finalImage.naturalWidth > 0;
+                updateFrame();
+            });
+            finalImage.addEventListener('error', function() {
+                ready = false;
+                updateFrame();
+            });
+            frame.addEventListener('pointerenter', function(event) {
+                if (event.pointerType === 'touch') return;
+                hovered = true;
+                prepareFinal();
+                updateFrame();
+            });
+            frame.addEventListener('pointerleave', function() {
+                hovered = false;
+                updateFrame();
+            });
+            frame.addEventListener('focus', prepareFinal);
+            frame.addEventListener('click', function() {
+                pinned = !pinned;
+                prepareFinal();
+                updateFrame();
+            });
+            frame.addEventListener('keydown', function(event) {
+                if (event.key !== 'Escape') return;
+                pinned = false;
+                hovered = false;
+                updateFrame();
+            });
+            updateFrame();
+        });
+
+        function updateNavigation() {
+            const end = viewport.scrollWidth - viewport.clientWidth;
+            previous.disabled = viewport.scrollLeft <= 2;
+            next.disabled = viewport.scrollLeft >= end - 2;
+        }
+
+        function move(direction) {
+            const shot = track.querySelector('.storyboard-shot');
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            viewport.scrollBy({
+                left: direction * (shot.getBoundingClientRect().width + gap),
+                behavior: reducedMotion.matches ? 'instant' : 'smooth'
+            });
+        }
+
+        previous.addEventListener('click', function() { move(-1); });
+        next.addEventListener('click', function() { move(1); });
+        viewport.addEventListener('scroll', updateNavigation, { passive: true });
+        viewport.addEventListener('keydown', function(event) {
+            if (event.target !== viewport) return;
+            if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+            event.preventDefault();
+            move(event.key === 'ArrowRight' ? 1 : -1);
+        });
+        window.addEventListener('resize', updateNavigation);
+        updateNavigation();
+    })();
+
     /* =====================================================
        MAIN TV SPOT — centered poster play control
     ===================================================== */

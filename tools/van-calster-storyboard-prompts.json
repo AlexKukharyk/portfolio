@@ -1,0 +1,258 @@
+{
+  "mode": "built-in image_gen",
+  "requested_dimensions": "1024x1024",
+  "native_dimensions": "1254 × 1254",
+  "intended_palette": [
+    "#E8EDF0",
+    "#1C2A35",
+    "#8FABBC"
+  ],
+  "scenes": [
+    {
+      "scene": 1,
+      "selected_output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-77bfac56-d999-4b6d-bd92-a263f8149e2e.png",
+      "prompts": [
+        {
+          "prompt": "Use case: illustration-story\nAsset type: standalone storyboard draft illustration, square 1024x1024.\nPrimary request: Generate a NEW, extremely simple flat schematic drawing of a wrecked bathroom. The supplied photo is a COMPOSITION REFERENCE ONLY; do not stylize or repaint its photographic detail.\nInput image 1 role: composition reference, frontal eye-level view into a narrow corridor bathroom.\nScene: radiator on the left wall, toilet at left rear, sink and rectangular mirror on the right wall, broken old bathtub centered against the rear wall. A few small angular rubble shapes near the bathtub. Two or three basic rectangular ceiling lamps hang crooked on simple cables. No people.\nStyle: very very simplified vector-like bitmap storyboard draft. Primitive geometric silhouettes, sparse uniform bold dark outlines, solid flat fills, lots of clear shapes. Broad perspective construction with at most 4–5 tile-grid lines per surface; no dense tiling. Omit towels, bottles and little fittings. Do not render photographic surfaces.\nPalette: use exactly three solid colours throughout: light paper gray #E8EDF0, dark ink #1C2A35, muted blue #8FABBC. Every shape uses one of those colours. Paper-gray ground, dark ink outlines and select silhouettes, muted blue on broad surfaces. No other colour, no gradients, no texture, no tonal shading.\nComposition: same frontal eye-level corridor layout as reference, long central view to broken bathtub, edge-to-edge square scene.\nConstraints: one image only, no montage or sheet, no panel border, no numbers, no captions, no writing, no VO, no logos, no watermark. No photorealism, no 3D rendering, no architectural detail, no hatching, no speckle. Minimum geometry needed to communicate this scene.",
+          "references": [
+            "G:/Projects/OK Design/okdesign.cc/assets/images/projects/van-calster/storyboard/story01.webp"
+          ],
+          "output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-9f889db5-ab1d-4e61-a407-b8235e21f642.png"
+        },
+        {
+          "prompt": "Use case: illustration-story\nPrimary request: Simplify the supplied bathroom drawing into an EXTREMELY MINIMAL schematic storyboard draft. Keep the same eye-level frontal corridor composition and objects: radiator left, toilet rear left, sink and mirror right, broken tub rear, crooked dangling ceiling lamps, a few rubble shapes, small hammer/crowbar on floor.\nChange only the visual complexity: reduce this to primitive shapes and truly FLAT solid fills. The current image has too much tiling and too much dimensional rendering.\nIMPORTANT simplification: remove the entire repeated small tile grid. Use only TWO horizontal wall lines and TWO vertical division lines on each wall; the rest is large uninterrupted colour. Floor has THREE perspective lines and TWO cross-lines total. Draw radiator as one rectangle with THREE rungs. Draw sink, toilet, tub, tools and lamps as schematic glyphs made of a few flat polygons each. Outline everything with a simple even 7px dark ink line. No bevels, curved shading, reflections, highlights or naturalistic silhouettes.\nExactly three solid palette fills: background paper gray #E8EDF0, dark ink #1C2A35, muted blue #8FABBC. The fills must be completely UNIFORM with zero gradients or texture. Use the paper gray for most walls/ceiling/floor; muted blue for a few object fills. Flat posterized 2D illustration; primitive storyboard blocking sketch.\nSquare 1024x1024 edge-to-edge single scene, no borders, no montage, no labels or text, no people, no watermark.",
+          "references": [
+            "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-9f889db5-ab1d-4e61-a407-b8235e21f642.png"
+          ],
+          "output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-77bfac56-d999-4b6d-bd92-a263f8149e2e.png"
+        }
+      ],
+      "composition_reference": "assets/images/projects/van-calster/storyboard/story01.webp",
+      "website_draft": "assets/images/projects/van-calster/storyboard/drafts/shot-01.webp",
+      "website_final_preview": "assets/images/projects/van-calster/storyboard/previews/story01.webp",
+      "caption": {
+        "id": "01",
+        "title": "Uneasy arrival",
+        "action": "A slow camera move through a wrecked bathroom. Loose lamps flicker and spark; horror ambience builds, then the lights go out.",
+        "vo": "Wordt je badkamerrenovatie een ware horrorfilm?",
+        "alt": "Draft of a damaged bathroom with hanging lamps and a broken bathtub"
+      }
+    },
+    {
+      "scene": 2,
+      "selected_output": "C:/Users/Alex/.codex/generated_images/01a06957-5b5a-7963-be3c-bf5a4d32eaa8/exec-2f0367bc-cda0-488a-aa7d-568d119847e4.png",
+      "prompts": [
+        {
+          "prompt": "Use case: illustration-story\nAsset type: standalone square 1024x1024 storyboard draft, one edge-to-edge scene.\nPrimary request: Generate a NEW illustration following the stated scene, using reference 1 for its room composition/action ONLY and reference 2 for the common drawing style. Do not repaint the photograph.\nStyle reference 2: match its minimal schematic drawing, sparse dark ink outlines, primitive geometry and pale paper/blue colour system. Make the fills completely uniform and flat. Use even bold outlines, no texture, no tonal shading, no highlights, no gradients, no reflections, no 3D rendering. Shapes should look like rough vector blocking, extremely simplified.\nExact palette throughout: light paper gray #E8EDF0, dark ink #1C2A35, muted blue #8FABBC. Large paper-gray areas, ink outlines/silhouettes and selected muted blue object fills. Do not add colours.\nRoom simplification where applicable: use at most TWO horizontal lines and TWO vertical divisions on each wall, and THREE perspective lines plus TWO cross-lines on floor. Radiator is a rectangle with only three rungs. Object forms use few polygons. Workers, where present, are faceless schematic mannequins with plain oval/circle heads, simple block torsos, straight limbs, no eyes/mouth/hair/fingers or clothing detail.\nConstraints: one scene only, no montage or storyboard sheet, no border, no panel number, no caption, no VO, no watermark, no brand logo. No text except the exact text explicitly requested in Scene. Avoid detailed tiles, photorealistic forms and surface detail.\nScene: A close view of a broadly tiled wall, in the wall-and-spotlight composition of reference 1. A basic flashlight silhouette enters from the lower-left corner, aimed toward the center-right. Show its beam as a hard-edged paper-gray cone and a large hard-edged pale spot on a muted-blue wall, no soft lighting or glow. Inside the pale spotlight, render exactly the readable English text \"LEAVE IT TO THE PROS.\" in simple dark ink uppercase sans-serif lettering on two or three centered lines. The message is clean schematic lettering, not creepy handwriting. Keep surrounding wall very simple, four or five grid lines total. No person or hand. No other text.",
+          "references": [
+            "G:/Projects/OK Design/okdesign.cc/assets/images/projects/van-calster/storyboard/story02.webp",
+            "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-77bfac56-d999-4b6d-bd92-a263f8149e2e.png"
+          ],
+          "output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-f1735d08-92b7-4758-b24c-e50c492374d5.png"
+        },
+        {
+          "prompt": "Use case: text-localization. Edit target: the supplied square, flat schematic storyboard illustration of a flashlight illuminating a tiled wall. Change ONLY the text inside the light spot. Replace the entire English inscription \"LEAVE IT TO THE PROS.\" with the exact Dutch text \"Laat het over aan de profs\" (no period). Render verbatim, with capital L and the other letters lowercase, as bold clear dark sans-serif lettering, centered within the light spot. Arrange in three lines as \"Laat het\" / \"over aan\" / \"de profs\" so it reads clearly at a small size. Preserve everything else: exact square crop, flashlight at lower left, beam geometry and circular spot, existing tile lines and their positions, line thickness, flat three-colour pale paper-gray/dark-ink/muted-blue palette. Do not add any text, objects, shading, texture or decorative detail. This is a tiny language correction to the same drawing.",
+          "references": [
+            "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-f1735d08-92b7-4758-b24c-e50c492374d5.png"
+          ],
+          "output": "C:/Users/Alex/.codex/generated_images/01a06957-5b5a-7963-be3c-bf5a4d32eaa8/exec-2f0367bc-cda0-488a-aa7d-568d119847e4.png"
+        }
+      ],
+      "composition_reference": "assets/images/projects/van-calster/storyboard/story02.webp",
+      "website_draft": "assets/images/projects/van-calster/storyboard/drafts/shot-02.webp",
+      "website_final_preview": "assets/images/projects/van-calster/storyboard/previews/story02.webp",
+      "caption": {
+        "id": "02",
+        "title": "The message",
+        "action": "A flashlight sweeps across the tiled wall, revealing a message: “Laat het over aan de profs”.",
+        "vo": "Laat het over aan de profs.",
+        "alt": "Draft of a flashlight illuminating a message on a tiled wall"
+      }
+    },
+    {
+      "scene": 3,
+      "selected_output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-82c18ade-df09-4c9a-8c71-1d0779d65ee2.png",
+      "prompts": [
+        {
+          "prompt": "Use case: illustration-story\nAsset type: standalone square 1024x1024 storyboard draft, one edge-to-edge scene.\nPrimary request: Generate a NEW illustration following the stated scene, using reference 1 for its room composition/action ONLY and reference 2 for the common drawing style. Do not repaint the photograph.\nStyle reference 2: match its minimal schematic drawing, sparse dark ink outlines, primitive geometry and pale paper/blue colour system. Make the fills completely uniform and flat. Use even bold outlines, no texture, no tonal shading, no highlights, no gradients, no reflections, no 3D rendering. Shapes should look like rough vector blocking, extremely simplified.\nExact palette throughout: light paper gray #E8EDF0, dark ink #1C2A35, muted blue #8FABBC. Large paper-gray areas, ink outlines/silhouettes and selected muted blue object fills. Do not add colours.\nRoom simplification where applicable: use at most TWO horizontal lines and TWO vertical divisions on each wall, and THREE perspective lines plus TWO cross-lines on floor. Radiator is a rectangle with only three rungs. Object forms use few polygons. Workers, where present, are faceless schematic mannequins with plain oval/circle heads, simple block torsos, straight limbs, no eyes/mouth/hair/fingers or clothing detail.\nConstraints: one scene only, no montage or storyboard sheet, no border, no panel number, no caption, no VO, no watermark, no brand logo. No text except the exact text explicitly requested in Scene. Avoid detailed tiles, photorealistic forms and surface detail.\nScene: Same narrow wrecked bathroom, but camera is at floor level looking slightly upward, matching reference 1's low floor viewpoint. A large very simple hammer and crowbar lie across the extreme bottom foreground close to the lens. Broken bathtub at rear with a few rubble shapes, toilet at rear left, radiator on left wall, floating sink and mirror on right wall. Three crooked rectangular ceiling lamps dangle from cables. No people. Preserve strong floor-level depth but use broad schematic perspective and only a handful of tile division lines. No text.",
+          "references": [
+            "G:/Projects/OK Design/okdesign.cc/assets/images/projects/van-calster/storyboard/story03.webp",
+            "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-77bfac56-d999-4b6d-bd92-a263f8149e2e.png"
+          ],
+          "output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-82c18ade-df09-4c9a-8c71-1d0779d65ee2.png"
+        }
+      ],
+      "composition_reference": "assets/images/projects/van-calster/storyboard/story03.webp",
+      "website_draft": "assets/images/projects/van-calster/storyboard/drafts/shot-03.webp",
+      "website_final_preview": "assets/images/projects/van-calster/storyboard/previews/story03.webp",
+      "caption": {
+        "id": "03",
+        "title": "Camera drop",
+        "action": "The camera drops to the floor, facing the old tub. The lights flicker, then cut to black.",
+        "vo": "No voiceover. A heavy impact, flickering lights, then silence.",
+        "voLabel": "SFX / NO VO",
+        "alt": "Low-angle bathroom draft with a hammer and crowbar in the foreground"
+      }
+    },
+    {
+      "scene": 4,
+      "selected_output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-1702d7cb-83f0-4807-a4a7-3d0a4ed96967.png",
+      "prompts": [
+        {
+          "prompt": "Use case: illustration-story\nAsset type: standalone square 1024x1024 storyboard draft, one edge-to-edge scene.\nPrimary request: Generate a NEW illustration following the stated scene, using reference 1 for its room composition/action ONLY and reference 2 for the common drawing style. Do not repaint the photograph.\nStyle reference 2: match its minimal schematic drawing, sparse dark ink outlines, primitive geometry and pale paper/blue colour system. Make the fills completely uniform and flat. Use even bold outlines, no texture, no tonal shading, no highlights, no gradients, no reflections, no 3D rendering. Shapes should look like rough vector blocking, extremely simplified.\nExact palette throughout: light paper gray #E8EDF0, dark ink #1C2A35, muted blue #8FABBC. Large paper-gray areas, ink outlines/silhouettes and selected muted blue object fills. Do not add colours.\nRoom simplification where applicable: use at most TWO horizontal lines and TWO vertical divisions on each wall, and THREE perspective lines plus TWO cross-lines on floor. Radiator is a rectangle with only three rungs. Object forms use few polygons. Workers, where present, are faceless schematic mannequins with plain oval/circle heads, simple block torsos, straight limbs, no eyes/mouth/hair/fingers or clothing detail.\nConstraints: one scene only, no montage or storyboard sheet, no border, no panel number, no caption, no VO, no watermark, no brand logo. No text except the exact text explicitly requested in Scene. Avoid detailed tiles, photorealistic forms and surface detail.\nScene: Same narrow bathroom viewed from a camera on the floor looking upward, matching reference 1. One faceless schematic worker kneels very close to the camera in the right foreground, dominating the right half, and extends one arm toward/holding a small schematic rectangular camera at the lens near the lower right/center. Plain oval head and simple blue body, no facial features. Old broken bathtub still at back, toilet left rear and radiator on left wall, sink and mirror on right behind worker. Ceiling lamps are fixed straight flat against ceiling, with NO dangling cables. A simple hammer/crowbar may lie at the bottom edge. No extra people. No text.",
+          "references": [
+            "G:/Projects/OK Design/okdesign.cc/assets/images/projects/van-calster/storyboard/story04.webp",
+            "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-77bfac56-d999-4b6d-bd92-a263f8149e2e.png"
+          ],
+          "output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-21babeab-c107-4308-9bcd-c7d506d22a0f.png"
+        },
+        {
+          "prompt": "Use case: precise-object-edit\nEdit the supplied minimal bathroom storyboard drawing. Change only one detail: add a SMALL schematic camera in the lower-right foreground by the worker's extended arm, with the worker reaching toward/holding it. The camera is a plain rectangular dark ink box with a single pale circular lens, simple and clearly recognizable, and not large enough to cover the whole worker.\nKeep everything else unchanged: the square composition, low floor viewpoint, kneeling faceless worker foreground right, blank oval head, simple overall shapes, old broken bathtub rear, toilet and radiator left, sparse room division lines, foreground hammer/crowbar, fixed flat ceiling lamps without dangling cables. Keep the exact same very simple flat schematic three-colour style, paper gray #E8EDF0, dark ink #1C2A35, muted blue #8FABBC. Solid uniform fills only. No extra detail, no shadows, no textures, no extra people or objects, no text or logos.",
+          "references": [
+            "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-21babeab-c107-4308-9bcd-c7d506d22a0f.png"
+          ],
+          "output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-1702d7cb-83f0-4807-a4a7-3d0a4ed96967.png"
+        }
+      ],
+      "composition_reference": "assets/images/projects/van-calster/storyboard/story04.webp",
+      "website_draft": "assets/images/projects/van-calster/storyboard/drafts/shot-04.webp",
+      "website_final_preview": "assets/images/projects/van-calster/storyboard/previews/story04.webp",
+      "caption": {
+        "id": "04",
+        "title": "The reveal",
+        "action": "A worker pulls his hand away from the camera. Cut from black to the same room, brightly lit, with tools in the foreground.",
+        "vo": "Van Calster regelt alles",
+        "alt": "Draft of a faceless worker reaching toward the camera in the bathroom"
+      }
+    },
+    {
+      "scene": 5,
+      "selected_output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-fd68b0ad-d2c2-4737-8662-b49097074d48.png",
+      "prompts": [
+        {
+          "prompt": "Use case: illustration-story\nAsset type: standalone square 1024x1024 storyboard draft, one edge-to-edge scene.\nPrimary request: Generate a NEW illustration following the stated scene, using reference 1 for its room composition/action ONLY and reference 2 for the common drawing style. Do not repaint the photograph.\nStyle reference 2: match its minimal schematic drawing, sparse dark ink outlines, primitive geometry and pale paper/blue colour system. Make the fills completely uniform and flat. Use even bold outlines, no texture, no tonal shading, no highlights, no gradients, no reflections, no 3D rendering. Shapes should look like rough vector blocking, extremely simplified.\nExact palette throughout: light paper gray #E8EDF0, dark ink #1C2A35, muted blue #8FABBC. Large paper-gray areas, ink outlines/silhouettes and selected muted blue object fills. Do not add colours.\nRoom simplification where applicable: use at most TWO horizontal lines and TWO vertical divisions on each wall, and THREE perspective lines plus TWO cross-lines on floor. Radiator is a rectangle with only three rungs. Object forms use few polygons. Workers, where present, are faceless schematic mannequins with plain oval/circle heads, simple block torsos, straight limbs, no eyes/mouth/hair/fingers or clothing detail.\nConstraints: one scene only, no montage or storyboard sheet, no border, no panel number, no caption, no VO, no watermark, no brand logo. No text except the exact text explicitly requested in Scene. Avoid detailed tiles, photorealistic forms and surface detail.\nScene: Same low floor-level view along the narrow bathroom toward the back. Two small faceless schematic workers stand at the REAR beside the old broken bathtub doing demolition; one on each side, holding a simple tool or reaching toward the tub. They are distant and do not occupy the foreground. Radiator on left wall, toilet left rear, sink and mirror on right wall. A few angular rubble shapes around old tub. Fixed straight rectangular ceiling lamps flush against ceiling, no dangling cables. Foreground floor mostly clear. Exactly TWO workers. No text.",
+          "references": [
+            "G:/Projects/OK Design/okdesign.cc/assets/images/projects/van-calster/storyboard/story05.webp",
+            "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-77bfac56-d999-4b6d-bd92-a263f8149e2e.png"
+          ],
+          "output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-fd68b0ad-d2c2-4737-8662-b49097074d48.png"
+        }
+      ],
+      "composition_reference": "assets/images/projects/van-calster/storyboard/story05.webp",
+      "website_draft": "assets/images/projects/van-calster/storyboard/drafts/shot-05.webp",
+      "website_final_preview": "assets/images/projects/van-calster/storyboard/previews/story05.webp",
+      "caption": {
+        "id": "05",
+        "title": "Demolition",
+        "action": "Two workers dismantle the old bathtub. The camera stays low and locked in the same position.",
+        "vo": "Nu met dubbel voordeel.",
+        "alt": "Draft of two faceless workers dismantling the bathtub"
+      }
+    },
+    {
+      "scene": 6,
+      "selected_output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-62d46dbd-d10a-4e1a-8d0e-73abb5db876a.png",
+      "prompts": [
+        {
+          "prompt": "Use case: illustration-story\nAsset type: standalone square 1024x1024 storyboard draft, one edge-to-edge scene.\nPrimary request: Generate a NEW illustration following the stated scene, using reference 1 for its room composition/action ONLY and reference 2 for the common drawing style. Do not repaint the photograph.\nStyle reference 2: match its minimal schematic drawing, sparse dark ink outlines, primitive geometry and pale paper/blue colour system. Make the fills completely uniform and flat. Use even bold outlines, no texture, no tonal shading, no highlights, no gradients, no reflections, no 3D rendering. Shapes should look like rough vector blocking, extremely simplified.\nExact palette throughout: light paper gray #E8EDF0, dark ink #1C2A35, muted blue #8FABBC. Large paper-gray areas, ink outlines/silhouettes and selected muted blue object fills. Do not add colours.\nRoom simplification where applicable: use at most TWO horizontal lines and TWO vertical divisions on each wall, and THREE perspective lines plus TWO cross-lines on floor. Radiator is a rectangle with only three rungs. Object forms use few polygons. Workers, where present, are faceless schematic mannequins with plain oval/circle heads, simple block torsos, straight limbs, no eyes/mouth/hair/fingers or clothing detail.\nConstraints: one scene only, no montage or storyboard sheet, no border, no panel number, no caption, no VO, no watermark, no brand logo. No text except the exact text explicitly requested in Scene. Avoid detailed tiles, photorealistic forms and surface detail.\nScene: Same low floor-level bathroom camera as reference 1. Exactly ONE visible faceless schematic worker dominates foreground LEFT, carrying the near end of a simple old bathtub diagonally across/out of the left edge. The tub is being removed: it is partly cut off by the left edge and held up around waist level. The second carrier is entirely OFFSCREEN: draw no second figure or extra hands. The back wall is now empty of a tub and shows a simple stripped rectangular patch plus a few small rubble shapes. Radiator left, toilet rear left, sink and mirror right, fixed flat ceiling lamps. No bathtub remains at back. No text.",
+          "references": [
+            "G:/Projects/OK Design/okdesign.cc/assets/images/projects/van-calster/storyboard/story06.webp",
+            "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-77bfac56-d999-4b6d-bd92-a263f8149e2e.png"
+          ],
+          "output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-62d46dbd-d10a-4e1a-8d0e-73abb5db876a.png"
+        }
+      ],
+      "composition_reference": "assets/images/projects/van-calster/storyboard/story06.webp",
+      "website_draft": "assets/images/projects/van-calster/storyboard/drafts/shot-06.webp",
+      "website_final_preview": "assets/images/projects/van-calster/storyboard/previews/story06.webp",
+      "caption": {
+        "id": "06",
+        "title": "Tub removal",
+        "action": "A worker carries the old bathtub out of frame; a second worker holds the other end off-camera.",
+        "vo": "Gratis uitbraak van je oude bad.",
+        "alt": "Draft of a worker carrying the old bathtub out of the room"
+      }
+    },
+    {
+      "scene": 7,
+      "selected_output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-32aaaffc-f8fb-4887-8d37-1716ff4af907.png",
+      "prompts": [
+        {
+          "prompt": "Use case: illustration-story\nAsset type: standalone square 1024x1024 storyboard draft, one edge-to-edge scene.\nPrimary request: Generate a NEW illustration following the stated scene, using reference 1 for its room composition/action ONLY and reference 2 for the common drawing style. Do not repaint the photograph.\nStyle reference 2: match its minimal schematic drawing, sparse dark ink outlines, primitive geometry and pale paper/blue colour system. Make the fills completely uniform and flat. Use even bold outlines, no texture, no tonal shading, no highlights, no gradients, no reflections, no 3D rendering. Shapes should look like rough vector blocking, extremely simplified.\nExact palette throughout: light paper gray #E8EDF0, dark ink #1C2A35, muted blue #8FABBC. Large paper-gray areas, ink outlines/silhouettes and selected muted blue object fills. Do not add colours.\nRoom simplification where applicable: use at most TWO horizontal lines and TWO vertical divisions on each wall, and THREE perspective lines plus TWO cross-lines on floor. Radiator is a rectangle with only three rungs. Object forms use few polygons. Workers, where present, are faceless schematic mannequins with plain oval/circle heads, simple block torsos, straight limbs, no eyes/mouth/hair/fingers or clothing detail.\nConstraints: one scene only, no montage or storyboard sheet, no border, no panel number, no caption, no VO, no watermark, no brand logo. No text except the exact text explicitly requested in Scene. Avoid detailed tiles, photorealistic forms and surface detail.\nScene: Same narrow bathroom and LOW FLOOR-LEVEL upward view as reference 1, now EMPTY OF ALL WORKERS AND BATHTUBS. At the rear where the tub stood: a simple large exposed stripped rectangular wall patch, one or two basic pipe lines, small pile of angular rubble. Radiator left wall, toilet at rear left, floating sink and rectangular mirror on right wall. Fixed rectangular lamps flat against ceiling, no dangling cables. Foreground floor largely empty, broad perspective construction, sparse grid. No people, no tools, no tub, no text.",
+          "references": [
+            "G:/Projects/OK Design/okdesign.cc/assets/images/projects/van-calster/storyboard/story07.webp",
+            "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-77bfac56-d999-4b6d-bd92-a263f8149e2e.png"
+          ],
+          "output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-32aaaffc-f8fb-4887-8d37-1716ff4af907.png"
+        }
+      ],
+      "composition_reference": "assets/images/projects/van-calster/storyboard/story07.webp",
+      "website_draft": "assets/images/projects/van-calster/storyboard/drafts/shot-07.webp",
+      "website_final_preview": "assets/images/projects/van-calster/storyboard/previews/story07.webp",
+      "caption": {
+        "id": "07",
+        "title": "Cleared space",
+        "action": "The same locked-off view, now empty. The tub is gone, leaving an exposed wall and demolition debris.",
+        "vo": "The previous line continues over the cleared space.",
+        "voLabel": "VO / CONTINUED",
+        "alt": "Draft of the bathroom after the old bathtub has been removed"
+      }
+    },
+    {
+      "scene": 8,
+      "selected_output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-e9a21270-13e9-4633-a443-e61a4003927f.png",
+      "prompts": [
+        {
+          "prompt": "Use case: illustration-story\nAsset type: standalone square 1024x1024 storyboard draft, one edge-to-edge scene.\nPrimary request: Generate a NEW illustration following the stated scene, using reference 1 for its room composition/action ONLY and reference 2 for the common drawing style. Do not repaint the photograph.\nStyle reference 2: match its minimal schematic drawing, sparse dark ink outlines, primitive geometry and pale paper/blue colour system. Make the fills completely uniform and flat. Use even bold outlines, no texture, no tonal shading, no highlights, no gradients, no reflections, no 3D rendering. Shapes should look like rough vector blocking, extremely simplified.\nExact palette throughout: light paper gray #E8EDF0, dark ink #1C2A35, muted blue #8FABBC. Large paper-gray areas, ink outlines/silhouettes and selected muted blue object fills. Do not add colours.\nRoom simplification where applicable: use at most TWO horizontal lines and TWO vertical divisions on each wall, and THREE perspective lines plus TWO cross-lines on floor. Radiator is a rectangle with only three rungs. Object forms use few polygons. Workers, where present, are faceless schematic mannequins with plain oval/circle heads, simple block torsos, straight limbs, no eyes/mouth/hair/fingers or clothing detail.\nConstraints: one scene only, no montage or storyboard sheet, no border, no panel number, no caption, no VO, no watermark, no brand logo. No text except the exact text explicitly requested in Scene. Avoid detailed tiles, photorealistic forms and surface detail.\nScene: Same narrow bathroom from LOW FLOOR-LEVEL looking slightly upward, now fully renovated and clean as reference 1. Walk-in shower at the back: one simple transparent-looking outlined glass panel filled paper gray, minimal shower head and pipe, clean shower base. Modern wall-hung toilet on left, simple ladder radiator on left wall, modern floating vanity and large rectangular mirror on right wall. Clean rectangular fixed flush ceiling lamps. Sparse broad tile division lines and uniform solid fills. No workers, no bathtub, no rubble, no tools. No text.",
+          "references": [
+            "G:/Projects/OK Design/okdesign.cc/assets/images/projects/van-calster/storyboard/story08.webp",
+            "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-77bfac56-d999-4b6d-bd92-a263f8149e2e.png"
+          ],
+          "output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-e9a21270-13e9-4633-a443-e61a4003927f.png"
+        }
+      ],
+      "composition_reference": "assets/images/projects/van-calster/storyboard/story08.webp",
+      "website_draft": "assets/images/projects/van-calster/storyboard/drafts/shot-08.webp",
+      "website_final_preview": "assets/images/projects/van-calster/storyboard/previews/story08.webp",
+      "caption": {
+        "id": "08",
+        "title": "Transformation",
+        "action": "Match cut to the finished bathroom: a walk-in shower, new sanitaryware and fitted furniture.",
+        "vo": "en veertig procent korting op sanitair",
+        "alt": "Draft of the renovated bathroom with a walk-in shower and new vanity"
+      }
+    },
+    {
+      "scene": 9,
+      "selected_output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-ba898cf6-5d9f-4f4c-acbc-e0bec23dd1be.png",
+      "prompts": [
+        {
+          "prompt": "Use case: illustration-story\nAsset type: standalone square 1024x1024 storyboard draft, one edge-to-edge scene.\nPrimary request: Generate a NEW illustration following the stated scene, using reference 1 for its room composition/action ONLY and reference 2 for the common drawing style. Do not repaint the photograph.\nStyle reference 2: match its minimal schematic drawing, sparse dark ink outlines, primitive geometry and pale paper/blue colour system. Make the fills completely uniform and flat. Use even bold outlines, no texture, no tonal shading, no highlights, no gradients, no reflections, no 3D rendering. Shapes should look like rough vector blocking, extremely simplified.\nExact palette throughout: light paper gray #E8EDF0, dark ink #1C2A35, muted blue #8FABBC. Large paper-gray areas, ink outlines/silhouettes and selected muted blue object fills. Do not add colours.\nRoom simplification where applicable: use at most TWO horizontal lines and TWO vertical divisions on each wall, and THREE perspective lines plus TWO cross-lines on floor. Radiator is a rectangle with only three rungs. Object forms use few polygons. Workers, where present, are faceless schematic mannequins with plain oval/circle heads, simple block torsos, straight limbs, no eyes/mouth/hair/fingers or clothing detail.\nConstraints: one scene only, no montage or storyboard sheet, no border, no panel number, no caption, no VO, no watermark, no brand logo. No text except the exact text explicitly requested in Scene. Avoid detailed tiles, photorealistic forms and surface detail.\nScene: Minimal flat promotional scene based on reference 1's arrangement, but remove every original word, date, logo and discount. Exactly TWO giant flat hanging price tags occupy LEFT and CENTER; one muted blue and one paper gray outlined in dark ink, with simple loop and round hole. BOTH TAG FACES ARE COMPLETELY BLANK: no text, no lines, no marks. A simple broken tiled bathtub occupies LOWER RIGHT, built from a few primitive polygons and two or three break fragments. At top, exactly one large flat uppercase English word \"OFFER\" in dark ink sans-serif. O-F-F-E-R, verbatim. Use no extruded letters, no shadows, no gradients, no glossy 3D. Paper-gray background. No dates, no calendar, no logos, no discounts, no extra text.",
+          "references": [
+            "G:/Projects/OK Design/okdesign.cc/assets/images/projects/van-calster/storyboard/story09.webp",
+            "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-77bfac56-d999-4b6d-bd92-a263f8149e2e.png"
+          ],
+          "output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-8fec3d04-a706-4187-9218-59fba111813e.png"
+        },
+        {
+          "prompt": "Use case: precise-object-edit\nEdit the supplied flat storyboard offer illustration. Change ONLY THE BACKGROUND: remove the entire room, all perspective/grid lines, ceiling lamps, radiator, sink, mirror, faucet and every other background fixture. Replace all that background with ONE COMPLETELY UNIFORM SOLID paper-gray colour #E8EDF0. This is a clean flat promotional composition, not an interior scene.\nKeep exactly as currently placed and styled: the big dark uppercase word \"OFFER\" at top; exactly two giant hanging tags at left and center, with tag faces completely blank; the simple broken bathtub and its few fragments at lower right. Preserve their size and position, sparse bold dark outlines, and muted blue #8FABBC / dark ink #1C2A35 / paper gray #E8EDF0 palette. Do not add shadows, gradients, texture, other colours, other objects or text. Single square 1024x1024 edge-to-edge image.",
+          "references": [
+            "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-8fec3d04-a706-4187-9218-59fba111813e.png"
+          ],
+          "output": "C:/Users/Alex/.codex/generated_images/01a085fb-9a22-7ac1-9564-22196d9158fe/exec-ba898cf6-5d9f-4f4c-acbc-e0bec23dd1be.png"
+        }
+      ],
+      "composition_reference": "assets/images/projects/van-calster/storyboard/story09.webp",
+      "website_draft": "assets/images/projects/van-calster/storyboard/drafts/shot-09.webp",
+      "website_final_preview": "assets/images/projects/van-calster/storyboard/previews/story09.webp",
+      "caption": {
+        "id": "09",
+        "title": "The offer",
+        "action": "The offer packshot closes the spot: hanging tags, the broken bathtub, and a call to request a quote.",
+        "vo": "Badkamerrenovatie met dubbele voordelen. Vraag je offerte aan.",
+        "alt": "Flat offer draft with two blank hanging tags and a broken bathtub"
+      }
+    }
+  ],
+  "website_dimensions": "640 × 640, WebP quality 86"
+}
