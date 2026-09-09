@@ -1040,16 +1040,16 @@
         }
 
         /* ============================================================
-           GDN BANNERS — panoramic, auto-panning campaign board
+           CAMPAIGN FORMATS — panoramic, auto-panning campaign board
         ============================================================ */
-        .gdn-showcase-wrap {
+        .format-showcase-wrap {
             position: relative;
             overflow: hidden;
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 12px;
         }
-        .gdn-showcase {
+        .format-showcase {
             position: relative;
             width: 100%;
             overflow-x: auto;
@@ -1059,19 +1059,19 @@
             touch-action: pan-y;
             overscroll-behavior-inline: contain;
         }
-        .gdn-showcase::-webkit-scrollbar { display: none; }
-        .gdn-showcase.is-dragging { cursor: grabbing; }
-        .gdn-showcase:focus-visible {
+        .format-showcase::-webkit-scrollbar { display: none; }
+        .format-showcase.is-dragging { cursor: grabbing; }
+        .format-showcase:focus-visible {
             outline: 2px solid rgba(255,255,255,0.72);
             outline-offset: -4px;
         }
-        .gdn-board-frame {
+        .format-board-frame {
             position: relative;
             width: 3845px;
             height: 787px;
             flex: 0 0 auto;
         }
-        .gdn-board {
+        .format-board {
             position: absolute;
             inset: 0;
             width: 4806px;
@@ -1079,12 +1079,12 @@
             transform: scale(0.8);
             transform-origin: top left;
         }
-        .gdn-format {
+        .format-piece {
             position: absolute;
             margin: 0;
             user-select: none;
         }
-        .gdn-format-label {
+        .format-piece-label {
             display: block;
             position: absolute;
             top: -22px;
@@ -1096,7 +1096,7 @@
             line-height: 1;
             letter-spacing: 0.02em;
         }
-        .gdn-format img {
+        .format-piece img {
             display: block;
             width: 100%;
             height: auto;
@@ -1105,39 +1105,39 @@
             transition: opacity 0.45s ease;
             pointer-events: none;
         }
-        .gdn-format img.is-loaded { opacity: 1; }
+        .format-piece img.is-loaded { opacity: 1; }
 
         /* Reference layout: 56 px column gaps and 85 px between wide formats.
-           Banner artwork is displayed at 150% of its labelled GDN size. */
-        .gdn-format--120x600 { left: 84px;   top: 54px;    width: 180px; }
-        .gdn-format--160x600 { left: 348px;  top: 54px;    width: 240px; }
-        .gdn-format--200x400 { left: 672px;  top: 54px;    width: 300px; }
-        .gdn-format--250x250 { left: 1056px; top: 54px;    width: 375px; }
-        .gdn-format--300x250 { left: 1515px; top: 54px;    width: 450px; }
-        .gdn-format--300x600 { left: 2049px; top: 54px;    width: 450px; }
-        .gdn-format--336x280 { left: 2583px; top: 54px;    width: 504px; }
-        .gdn-format--728x90  { left: 3267px; top: 54px;    width: 1092px; }
-        .gdn-format--970x90  { left: 3267px; top: 316.5px; width: 1455px; }
-        .gdn-format--400x200 { left: 2583px; top: 654px;   width: 600px; }
-        .gdn-format--970x250 { left: 3267px; top: 579px;   width: 1455px; }
+           Artwork is displayed at 150% of its labelled production size. */
+        .format-piece--a { left: 84px;   top: 54px;    width: 180px; }
+        .format-piece--b { left: 348px;  top: 54px;    width: 240px; }
+        .format-piece--c { left: 672px;  top: 54px;    width: 300px; }
+        .format-piece--d { left: 1056px; top: 54px;    width: 375px; }
+        .format-piece--e { left: 1515px; top: 54px;    width: 450px; }
+        .format-piece--f { left: 2049px; top: 54px;    width: 450px; }
+        .format-piece--g { left: 2583px; top: 54px;    width: 504px; }
+        .format-piece--h { left: 3267px; top: 54px;    width: 1092px; }
+        .format-piece--i { left: 3267px; top: 316.5px; width: 1455px; }
+        .format-piece--j { left: 2583px; top: 654px;   width: 600px; }
+        .format-piece--k { left: 3267px; top: 579px;   width: 1455px; }
 
         @media (max-width: 1199.98px) {
-            .gdn-board-frame { width: 3153px; height: 646px; }
-            .gdn-board { transform: scale(0.656); }
+            .format-board-frame { width: 3153px; height: 646px; }
+            .format-board { transform: scale(0.656); }
         }
         @media (max-width: 991.98px) {
-            .gdn-board-frame { width: 2692px; height: 551px; }
-            .gdn-board { transform: scale(0.56); }
+            .format-board-frame { width: 2692px; height: 551px; }
+            .format-board { transform: scale(0.56); }
         }
         @media (max-width: 767.98px) {
-            .gdn-showcase {
+            .format-showcase {
                 cursor: auto;
                 touch-action: auto;
                 -webkit-overflow-scrolling: touch;
                 overscroll-behavior-x: contain;
             }
-            .gdn-board-frame { width: 2000px; height: 410px; }
-            .gdn-board { transform: scale(0.416); }
+            .format-board-frame { width: 2000px; height: 410px; }
+            .format-board { transform: scale(0.416); }
         }
 
         /* ============================================================
@@ -2155,53 +2155,53 @@
                 <!-- GDN Banners -->
                 <div class="mb-5">
                     <p class="section-label" style="margin-bottom:20px;">GDN Banners</p>
-                    <div class="gdn-showcase-wrap mb-3 mil-up" id="gdn-showcase-wrap">
-                        <div class="gdn-showcase mil-drag" id="gdn-showcase" tabindex="0" aria-label="Eleven Google Display Network banner formats. The gallery moves automatically and can also be dragged horizontally.">
-                            <div class="gdn-board-frame">
-                                <div class="gdn-board" id="gdn-board">
-                                    <figure class="gdn-format gdn-format--120x600">
-                                        <figcaption class="gdn-format-label">120×600</figcaption>
-                                        <img data-src="assets/images/projects/van-calster/GDN/120x600.png" width="240" height="1200" alt="Van Calster Dubbel Voordeel display banner, 120 by 600 pixels" draggable="false">
+                    <div class="format-showcase-wrap mb-3 mil-up" id="format-showcase-wrap">
+                        <div class="format-showcase mil-drag" id="format-showcase" tabindex="0" aria-label="Eleven Van Calster campaign format previews. The gallery moves automatically and can also be dragged horizontally.">
+                            <div class="format-board-frame">
+                                <div class="format-board" id="format-board">
+                                    <figure class="format-piece format-piece--a">
+                                        <figcaption class="format-piece-label">120×600</figcaption>
+                                        <img data-src="assets/images/projects/van-calster/media-set/visual-a.webp" width="240" height="1200" alt="Van Calster Dubbel Voordeel campaign format, 120 by 600 pixels" draggable="false">
                                     </figure>
-                                    <figure class="gdn-format gdn-format--160x600">
-                                        <figcaption class="gdn-format-label">160×600</figcaption>
-                                        <img data-src="assets/images/projects/van-calster/GDN/160x600.png" width="320" height="1200" alt="Van Calster Dubbel Voordeel display banner, 160 by 600 pixels" draggable="false">
+                                    <figure class="format-piece format-piece--b">
+                                        <figcaption class="format-piece-label">160×600</figcaption>
+                                        <img data-src="assets/images/projects/van-calster/media-set/visual-b.webp" width="320" height="1200" alt="Van Calster Dubbel Voordeel campaign format, 160 by 600 pixels" draggable="false">
                                     </figure>
-                                    <figure class="gdn-format gdn-format--200x400">
-                                        <figcaption class="gdn-format-label">200×400</figcaption>
-                                        <img data-src="assets/images/projects/van-calster/GDN/200x400.png" width="400" height="800" alt="Van Calster Dubbel Voordeel display banner, 200 by 400 pixels" draggable="false">
+                                    <figure class="format-piece format-piece--c">
+                                        <figcaption class="format-piece-label">200×400</figcaption>
+                                        <img data-src="assets/images/projects/van-calster/media-set/visual-c.webp" width="400" height="800" alt="Van Calster Dubbel Voordeel campaign format, 200 by 400 pixels" draggable="false">
                                     </figure>
-                                    <figure class="gdn-format gdn-format--250x250">
-                                        <figcaption class="gdn-format-label">250×250</figcaption>
-                                        <img data-src="assets/images/projects/van-calster/GDN/250x250.png" width="500" height="500" alt="Van Calster Dubbel Voordeel display banner, 250 by 250 pixels" draggable="false">
+                                    <figure class="format-piece format-piece--d">
+                                        <figcaption class="format-piece-label">250×250</figcaption>
+                                        <img data-src="assets/images/projects/van-calster/media-set/visual-d.webp" width="500" height="500" alt="Van Calster Dubbel Voordeel campaign format, 250 by 250 pixels" draggable="false">
                                     </figure>
-                                    <figure class="gdn-format gdn-format--300x250">
-                                        <figcaption class="gdn-format-label">300×250</figcaption>
-                                        <img data-src="assets/images/projects/van-calster/GDN/300x250.png" width="600" height="500" alt="Van Calster Dubbel Voordeel display banner, 300 by 250 pixels" draggable="false">
+                                    <figure class="format-piece format-piece--e">
+                                        <figcaption class="format-piece-label">300×250</figcaption>
+                                        <img data-src="assets/images/projects/van-calster/media-set/visual-e.webp" width="600" height="500" alt="Van Calster Dubbel Voordeel campaign format, 300 by 250 pixels" draggable="false">
                                     </figure>
-                                    <figure class="gdn-format gdn-format--300x600">
-                                        <figcaption class="gdn-format-label">300×600</figcaption>
-                                        <img data-src="assets/images/projects/van-calster/GDN/300x600.png" width="600" height="1200" alt="Van Calster Dubbel Voordeel display banner, 300 by 600 pixels" draggable="false">
+                                    <figure class="format-piece format-piece--f">
+                                        <figcaption class="format-piece-label">300×600</figcaption>
+                                        <img data-src="assets/images/projects/van-calster/media-set/visual-f.webp" width="600" height="1200" alt="Van Calster Dubbel Voordeel campaign format, 300 by 600 pixels" draggable="false">
                                     </figure>
-                                    <figure class="gdn-format gdn-format--336x280">
-                                        <figcaption class="gdn-format-label">336×280</figcaption>
-                                        <img data-src="assets/images/projects/van-calster/GDN/336x280.png" width="672" height="560" alt="Van Calster Dubbel Voordeel display banner, 336 by 280 pixels" draggable="false">
+                                    <figure class="format-piece format-piece--g">
+                                        <figcaption class="format-piece-label">336×280</figcaption>
+                                        <img data-src="assets/images/projects/van-calster/media-set/visual-g.webp" width="672" height="560" alt="Van Calster Dubbel Voordeel campaign format, 336 by 280 pixels" draggable="false">
                                     </figure>
-                                    <figure class="gdn-format gdn-format--728x90">
-                                        <figcaption class="gdn-format-label">728×90</figcaption>
-                                        <img data-src="assets/images/projects/van-calster/GDN/728x90.png" width="1456" height="180" alt="Van Calster Dubbel Voordeel display banner, 728 by 90 pixels" draggable="false">
+                                    <figure class="format-piece format-piece--h">
+                                        <figcaption class="format-piece-label">728×90</figcaption>
+                                        <img data-src="assets/images/projects/van-calster/media-set/visual-h.webp" width="1456" height="180" alt="Van Calster Dubbel Voordeel campaign format, 728 by 90 pixels" draggable="false">
                                     </figure>
-                                    <figure class="gdn-format gdn-format--970x90">
-                                        <figcaption class="gdn-format-label">970×90</figcaption>
-                                        <img data-src="assets/images/projects/van-calster/GDN/970x90.png" width="1940" height="180" alt="Van Calster Dubbel Voordeel display banner, 970 by 90 pixels" draggable="false">
+                                    <figure class="format-piece format-piece--i">
+                                        <figcaption class="format-piece-label">970×90</figcaption>
+                                        <img data-src="assets/images/projects/van-calster/media-set/visual-i.webp" width="1940" height="180" alt="Van Calster Dubbel Voordeel campaign format, 970 by 90 pixels" draggable="false">
                                     </figure>
-                                    <figure class="gdn-format gdn-format--400x200">
-                                        <figcaption class="gdn-format-label">400×200</figcaption>
-                                        <img data-src="assets/images/projects/van-calster/GDN/400x200.png" width="800" height="400" alt="Van Calster Dubbel Voordeel display banner, 400 by 200 pixels" draggable="false">
+                                    <figure class="format-piece format-piece--j">
+                                        <figcaption class="format-piece-label">400×200</figcaption>
+                                        <img data-src="assets/images/projects/van-calster/media-set/visual-j.webp" width="800" height="400" alt="Van Calster Dubbel Voordeel campaign format, 400 by 200 pixels" draggable="false">
                                     </figure>
-                                    <figure class="gdn-format gdn-format--970x250">
-                                        <figcaption class="gdn-format-label">970×250</figcaption>
-                                        <img data-src="assets/images/projects/van-calster/GDN/970x250.png" width="1940" height="500" alt="Van Calster Dubbel Voordeel display banner, 970 by 250 pixels" draggable="false">
+                                    <figure class="format-piece format-piece--k">
+                                        <figcaption class="format-piece-label">970×250</figcaption>
+                                        <img data-src="assets/images/projects/van-calster/media-set/visual-k.webp" width="1940" height="500" alt="Van Calster Dubbel Voordeel campaign format, 970 by 250 pixels" draggable="false">
                                     </figure>
                                 </div>
                             </div>
@@ -2678,11 +2678,11 @@
     })();
 
     /* =====================================================
-       GDN BANNER SHOWCASE — smooth ping-pong auto pan
+       CAMPAIGN FORMAT SHOWCASE — smooth ping-pong auto pan
     ===================================================== */
     (function() {
-        const viewport = document.getElementById('gdn-showcase');
-        const wrap = document.getElementById('gdn-showcase-wrap');
+        const viewport = document.getElementById('format-showcase');
+        const wrap = document.getElementById('format-showcase-wrap');
         if (!viewport || !wrap) return;
 
         const images = Array.from(viewport.querySelectorAll('img[data-src]'));
