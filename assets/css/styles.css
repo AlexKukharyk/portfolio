@@ -7427,7 +7427,7 @@ button.animate-btn::after,
 }
 
 /*# sourceMappingURL=styles.css.map */
-/* --- КАСТОМНЫЙ ШРИФТ И ГРАДИЕНТ ДЛЯ OK DESIGN --- */
+/* --- КАСТОМНЫЙ ШРИФТ И ГРАДИЕНТ ДЛЯ Oleksandr Kukharyk --- */
 
 /* Подключение шрифта Druk Wide Cyr (Bold) */
 @font-face {
@@ -7485,7 +7485,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, textarea, button {
     font-family: "Outfit", sans-serif !important;
 }
 
-//* ИСКЛЮЧЕНИЕ: Сохраняем шрифт Druk ТОЛЬКО для надписей OK DESIGN */
+//* ИСКЛЮЧЕНИЕ: Сохраняем шрифт Druk ТОЛЬКО для надписей Oleksandr Kukharyk */
 .logo-site, .site-name span, .ok-gradient-text {
     /* Если в твоей системе Druk называется чуть иначе (например, 'Druk Wide'), 
        замени 'Druk' на правильное название в кавычках */
@@ -7744,7 +7744,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, textarea, button {
     z-index: 2;
 }
 /* ==========================================================================
-   ОБНОВЛЕНИЕ ПЕРВОГО ЭКРАНА И КНОПКА СКРОЛЛА (OK DESIGN)
+   ОБНОВЛЕНИЕ ПЕРВОГО ЭКРАНА И КНОПКА СКРОЛЛА (Oleksandr Kukharyk)
    ========================================================================== */
 
 /* 1. Жестко фиксируем видео на первом экране на 100% высоты без текста */
@@ -7827,7 +7827,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, textarea, button {
         bottom: 24px; /* Безопасный отступ от нижнего края */
     }
 
-    /* 2. Добавляем отступ между OK DESIGN и текстом на главном экране */
+    /* 2. Добавляем отступ между Oleksandr Kukharyk и текстом на главном экране */
     .section-hero-content .col-md-7 {
         margin-bottom: 2.5rem !important; 
     }
@@ -7930,5 +7930,17 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, textarea, button {
        keep the blurred background + letterbox pattern intact */
     .mil-image-frame.mil-fw iframe {
         pointer-events: none;
+    }
+}
+
+/* Keep the full personal name on two lines across screen sizes. */
+.ok-gradient-text.portfolio-name {
+    font-size: clamp(30px, 4.2vw, 62px) !important;
+    line-height: 1.04 !important;
+    white-space: nowrap;
+}
+@media (max-width: 575px) {
+    .ok-gradient-text.portfolio-name {
+        font-size: clamp(26px, 8vw, 38px) !important;
     }
 }

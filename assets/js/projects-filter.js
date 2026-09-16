@@ -1,5 +1,5 @@
 /**
- * OK DESIGN — project search, filters, URL state and year sorting.
+ * OLEKSANDR KUKHARYK — project search, filters, URL state and year sorting.
  * Supports current homepage links such as ?filter=motion and ?client=somplo.
  */
 (function ($) {
