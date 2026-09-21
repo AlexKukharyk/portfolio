@@ -9,3 +9,5 @@ This folder is a self-contained static site: `index.html`, `css/`, `js/`, and `a
 The interface uses a dark palette, local Roboto and PT Mono fonts, and the supplied Growe Partners logo. Font licenses are kept in `assets/fonts/`. The reference creatives retain their original appearance.
 
 No navigation or project links to this page are added to the portfolio. Unused source archives are kept locally and excluded from publication.
+
+HUD corner brackets, SVG line reveals, and short button glitches are inspired by https://growe.partners/. They are implemented locally in `css/hud.css` and `js/hud.js`, follow the selected language, and respect reduced-motion preferences.

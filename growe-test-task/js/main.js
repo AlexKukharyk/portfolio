@@ -184,6 +184,7 @@
             }
         }
 
+        document.dispatchEvent(new Event("presentation:languagechange"));
         if (canUseScrollTrigger) window.ScrollTrigger.refresh();
     }
 
@@ -198,6 +199,7 @@
         preloader.style.visibility = "hidden";
         preloader.style.pointerEvents = "none";
         document.body.classList.add("is-ready");
+        document.dispatchEvent(new Event("presentation:ready"));
     }
 
     function initializeMotion() {
