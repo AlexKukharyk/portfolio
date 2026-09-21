@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111111">
+    <meta name="description" content="Growe test task presentation by Oleksandr Kukharyk.">
+    <title>Growe — тестове завдання · Oleksandr Kukharyk</title>
+    <link rel="icon" type="image/svg+xml" href="assets/growe-partners.svg">
+    <link rel="preload" href="assets/fonts/roboto-variable.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="assets/fonts/pt-mono-regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="preloader" aria-hidden="true">
+        <div class="preloader__top">
+            <img class="preloader__logo" src="assets/growe-partners.svg" alt="" width="116" height="48">
+            <span>01 / 02</span>
+        </div>
+        <div class="preloader__copy">
+            <div class="preloader__line"><span data-i18n="authorName">Олександр Кухарик</span></div>
+            <div class="preloader__line"><span data-i18n="loaderTask">Тестове завдання</span></div>
+        </div>
+        <div class="preloader__rule"><span></span></div>
+    </div>
+
+    <header class="floating-header">
+        <div class="header-bar">
+            <div class="header-identity">
+                <a class="header-logo" href="#top" aria-label="Growe — test task">
+                    <img src="assets/growe-partners.svg" alt="Growe Partners" width="106" height="44">
+                </a>
+                <div class="header-byline">
+                    <span class="header-task" data-i18n="headerTask">Тестове завдання</span>
+                    <span class="header-brand" data-i18n="authorName">Олександр Кухарик</span>
+                </div>
+            </div>
+            <nav class="header-nav" aria-label="Presentation navigation">
+                <a href="#results" data-i18n="navResults">Результати</a>
+                <a href="#task-one" data-i18n="navTaskOne">Завдання 1</a>
+                <a href="#task-two" data-i18n="navTaskTwo">Завдання 2</a>
+            </nav>
+            <div class="language-switch" role="group" aria-label="Language">
+                <button type="button" data-lang="ua" aria-pressed="true">UA</button>
+                <span>/</span>
+                <button type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <button class="go-top" type="button" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0-6 6m6-6 6 6"/></svg>
+    </button>
+
+    <main id="top">
+        <section class="hero-panel" id="results" aria-labelledby="results-title">
+            <div class="container hero-content">
+                <h1 id="results-title" data-i18n="resultsTitle" data-reveal>Результати</h1>
+
+                <div class="results-grid">
+                    <article class="result-card raised-card" data-reveal>
+                        <div class="card-number">01</div>
+                        <figure class="asset-slot asset-slot--portrait" data-kind="video" data-src="assets/9x16.mp4" data-controls="true" data-poster="assets/cover.png">
+                            <div class="asset-slot__stage">
+                                <div class="asset-slot__fallback">
+                                    <span class="asset-slot__ratio">9:16</span>
+                                    <span class="asset-slot__name" data-i18n="videoCreative">Відео‑креатив</span>
+                                    <span class="asset-slot__file">9x16.mp4</span>
+                                </div>
+                                <button class="video-play" type="button" aria-label="Відтворити відео">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 9 6-9 6Z"/></svg>
+                                </button>
+                            </div>
+                            <figcaption><span data-i18n="videoWithSound">Відео</span><span>MP4</span></figcaption>
+                        </figure>
+                        <p class="result-card__title" data-i18n="taskOneTitle">Завдання 1 — paid performance відео‑креатив</p>
+                    </article>
+
+                    <article class="result-card raised-card" data-reveal>
+                        <div class="card-number">02</div>
+                        <figure class="asset-slot asset-slot--static creative-carousel is-loaded" data-carousel aria-label="Статичні банери">
+                            <div class="creative-carousel__frame">
+                                <div class="asset-slot__stage creative-carousel__viewport" tabindex="0">
+                                    <div class="creative-carousel__slide is-active" aria-hidden="false">
+                                        <img src="assets/v1.webp" alt="Варіант статичного банера 1" data-i18n-alt="staticVariant" data-variant="1" draggable="false">
+                                    </div>
+                                    <div class="creative-carousel__slide" aria-hidden="true"><img src="assets/v2.webp" alt="Варіант статичного банера 2" data-i18n-alt="staticVariant" data-variant="2" draggable="false" loading="lazy"></div>
+                                    <div class="creative-carousel__slide" aria-hidden="true"><img src="assets/v3.webp" alt="Варіант статичного банера 3" data-i18n-alt="staticVariant" data-variant="3" draggable="false" loading="lazy"></div>
+                                    <div class="creative-carousel__slide" aria-hidden="true"><img src="assets/v4.webp" alt="Варіант статичного банера 4" data-i18n-alt="staticVariant" data-variant="4" draggable="false" loading="lazy"></div>
+                                    <div class="creative-carousel__slide" aria-hidden="true"><img src="assets/v5.webp" alt="Варіант статичного банера 5" data-i18n-alt="staticVariant" data-variant="5" draggable="false" loading="lazy"></div>
+                                    <div class="creative-carousel__slide" aria-hidden="true"><img src="assets/v6.webp" alt="Варіант статичного банера 6" data-i18n-alt="staticVariant" data-variant="6" draggable="false" loading="lazy"></div>
+                                </div>
+                                <div class="creative-carousel__controls">
+                                    <button class="carousel-arrow carousel-arrow--previous" type="button" aria-label="Попередній банер">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+                                    </button>
+                                    <span class="creative-carousel__counter" aria-live="polite"><span data-carousel-current>01</span> / 06</span>
+                                    <button class="carousel-arrow carousel-arrow--next" type="button" aria-label="Наступний банер">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <figcaption>
+                                <span data-i18n="staticCreative">Статичний банер</span>
+                                <span>1080 × 1920</span>
+                            </figcaption>
+                        </figure>
+                        <p class="result-card__title" data-i18n="taskTwoTitle">Завдання 2 — редизайн статичних банерів</p>
+                    </article>
+                </div>
+
+                <div class="download-row" data-reveal>
+                    <a class="ui-button ui-button--dark" href="https://drive.google.com/drive/folders/1vGRRKmSDg-kHZKkGQ4x2hhZtyKcZYsuZ?usp=sharing" target="_blank" rel="noopener noreferrer">
+                        <span data-i18n="downloadProject">Завантажити файли проєкту</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/></svg>
+                    </a>
+                    <a class="ui-button ui-button--light" href="https://drive.google.com/drive/folders/1irpCckeCuLmP0gtjx1q27pkAeCvKqgst?usp=sharing" target="_blank" rel="noopener noreferrer">
+                        <span data-i18n="downloadCreatives">Завантажити банери</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/></svg>
+                    </a>
+                    <a class="ui-button ui-button--figma" href="https://www.figma.com/design/r4naI71DuhgQ758vdFVjWB/Zeely-Test-Task---Oleksandr-Kukharyk?node-id=0-1&amp;t=xV0KSEZ3xgofKvgq-1" target="_blank" rel="noopener noreferrer">
+                        <span data-i18n="openFigma">Відкрити у Figma</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 16 16 8m-6 0h6v6"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section" id="task-one" aria-labelledby="task-one-title">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <span class="section-chip" data-i18n="taskOneLabel">Завдання 1</span>
+                    <h2 id="task-one-title" data-i18n="taskOneHeading">Paid performance відео‑креатив</h2>
+                </div>
+
+                <div class="story-stack">
+                    <article class="story-row" data-reveal>
+                        <div class="story-copy raised-card">
+                            <p><strong data-i18n="preparationLabel">Підготовка.</strong> <span data-i18n="studyIntro">Спочатку я ознайомився з візуальним стилем продукту на сайті та підготував SVG-версію логотипу для використання в креативах.</span></p>
+                            <p class="text-note" data-i18n="studyNote">Уже під час анімації UI я також помітив логотип у наданих Figma-файлах.</p>
+                        </div>
+                        <div class="story-media raised-card">
+                            <div class="logo-assets">
+                                <figure class="asset-slot asset-slot--logo-full" data-kind="image" data-src="assets/Full Logo.svg">
+                                    <div class="asset-slot__stage"><div class="asset-slot__fallback"><span class="asset-slot__ratio">SVG</span><span class="asset-slot__name">Full Logo</span><span class="asset-slot__file">Full Logo.svg</span></div></div>
+                                    <figcaption><span>Full Logo</span><span>01</span></figcaption>
+                                </figure>
+                                <figure class="asset-slot asset-slot--logo-mark" data-kind="image" data-src="assets/Logo.svg">
+                                    <div class="asset-slot__stage"><div class="asset-slot__fallback"><span class="asset-slot__ratio">SVG</span><span class="asset-slot__name">Logo</span><span class="asset-slot__file">Logo.svg</span></div></div>
+                                    <figcaption><span>Logo</span><span>02</span></figcaption>
+                                </figure>
+                                <figure class="asset-slot asset-slot--research" data-kind="image" data-src="assets/logo_parcing.webp">
+                                    <div class="asset-slot__stage"><div class="asset-slot__fallback"><span class="asset-slot__ratio">16:9</span><span class="asset-slot__name">Logo parsing</span><span class="asset-slot__file">logo_parcing.webp</span></div></div>
+                                    <figcaption><span>Logo parsing</span><span>03</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="story-row" data-reveal>
+                        <div class="story-copy story-copy--dark dark-card">
+                            <p><strong data-i18n="hookLabel">Концепція хука.</strong> <span data-i18n="hookP1">Я вирішив використати інший підхід до утримання уваги — pattern interrupt. Стрічки соцмереж переповнені класичним UGC: «голова, що говорить» плюс субтитри, і глядач уже навчився автоматично гортати такі відео в першу секунду.</span></p>
+                            <blockquote data-i18n="hookP2">Моя пропозиція — виразний швидкий моушн-дизайн на старті, який збиває звичний сценарій і зупиняє скрол.</blockquote>
+                            <p data-i18n="hookP3">За скриптом на перші три секунди припадає довге повідомлення. У виконанні реальної людини в кадрі воно звучало б зім’ято й неприродно. Швидка типографіка, pop-up бабли, SFX і візуальні акценти передають цей зміст ефективніше.</p>
+                            <p data-i18n="designCopy">Хук виконаний у мінімалістичному стилі продукту. Впізнаваний елемент UI в оригінальному кольорі #5DFCA5 використаний як знак генерації.</p>
+                        </div>
+                        <div class="story-media raised-card">
+                            <div class="design-assets">
+                                <figure class="asset-slot asset-slot--hook" data-kind="video" data-src="assets/hook.webm" aria-label="Hook video preview">
+                                    <div class="asset-slot__stage">
+                                        <div class="asset-slot__fallback">
+                                            <span class="asset-slot__ratio">Video</span>
+                                            <span class="asset-slot__name">Hook</span>
+                                            <span class="asset-slot__file">hook.webm</span>
+                                        </div>
+                                    </div>
+                                </figure>
+                                <figure class="asset-slot asset-slot--button" data-kind="image" data-src="assets/btn.svg">
+                                    <div class="asset-slot__stage"><div class="asset-slot__fallback"><span class="asset-slot__ratio">SVG</span><span class="asset-slot__name">Btn</span><span class="asset-slot__file">btn.svg</span></div></div>
+                                    <figcaption><span>Btn</span><span>01</span></figcaption>
+                                </figure>
+                                <figure class="asset-slot asset-slot--create" data-kind="image" data-src="assets/Create.svg">
+                                    <div class="asset-slot__stage"><div class="asset-slot__fallback"><span class="asset-slot__ratio">SVG</span><span class="asset-slot__name">Create</span><span class="asset-slot__file">Create.svg</span></div></div>
+                                    <figcaption><span>Create</span><span>02</span></figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="story-row" data-reveal>
+                        <div class="story-copy raised-card">
+                            <p><strong data-i18n="scriptLabel">Сценарій.</strong> <span data-i18n="scriptP1">Хук задає високу динаміку й показує «магію» — обіцянку сильного результату. Після цього ми органічно переходимо в UGC-частину та реальний інтерфейс Zeely з тими самими впізнаваними елементами.</span></p>
+                            <p data-i18n="scriptP2">Спочатку продаємо емоцію і результат, потім показуємо, наскільки легко цього досягти з продуктом. Тому фінальний скрипт був дещо змінений під запропоновану візуальну концепцію.</p>
+                        </div>
+                        <div class="comparison-stage raised-card">
+                            <div class="script-comparison">
+                                <article class="script-card">
+                                    <header><span>Before</span><strong data-i18n="briefScript">Скрипт із ТЗ</strong></header>
+                                    <div class="script-card__body">
+                                        <p><span>[HOOK]</span>You can make a full ad — real locations, your product, even yourself in it. And it looks real.</p>
+                                        <p><span>[BODY]</span>Go to Video Ads and start a new video.<br>Pick a preset, then upload your photo or product.<br>Choose a reference. Keep the avatar or change it.<br>Type a simple prompt — or let AI handle it.<br>Hit Generate. Pick a start frame and animate.<br>And here’s what you get.</p>
+                                        <p><span>[CTA]</span>Try it NOW</p>
+                                    </div>
+                                </article>
+                                <div class="comparison-arrow" aria-hidden="true"><svg viewBox="0 0 100 48"><path d="M2 24h91M72 3l21 21-21 21"/></svg></div>
+                                <article class="script-card script-card--accent">
+                                    <header><span>After</span><strong data-i18n="newScript">Новий скрипт / Voiceover</strong></header>
+                                    <div class="script-card__body">
+                                        <p><span>[HOOK]</span>Need a killer video ad? Add any locations, products, scripts, voices, avatars. Watch this 👀.</p>
+                                        <p><span>[BODY]</span>Go to Video Ads and start a new video.<br>Pick a preset, then upload your photo or product.<br>Choose a reference. Keep the avatar or change it.<br>Type a simple prompt — or let AI handle it.<br>Hit Generate. Pick a start frame and animate.<br>And here’s what you get.</p>
+                                        <p><span>[CTA] + logo</span>Try it NOW</p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="story-row story-row--single" data-reveal>
+                        <div class="story-copy story-copy--pipeline dark-card">
+                            <p><strong data-i18n="aiPipelineLabel">Voiceover та AI-аватар.</strong> <span data-i18n="aiPipelineIntro">Voiceover я згенерував окремо, після чого створив візуальний референс персонажа та lip sync відео з аватаром.</span></p>
+                            <div class="service-flow">
+                                <div class="service-step">
+                                    <span class="service-step__index">01</span>
+                                    <strong>ElevenLabs</strong>
+                                    <span data-i18n="elevenLabsStep">Окрема генерація voiceover.</span>
+                                </div>
+                                <div class="service-step">
+                                    <span class="service-step__index">02</span>
+                                    <strong>Nano Banana Pro</strong>
+                                    <span data-i18n="nanoBananaStep">Генерація візуального референсу персонажа.</span>
+                                </div>
+                                <div class="service-step">
+                                    <span class="service-step__index">03</span>
+                                    <strong>Minimax H3</strong>
+                                    <span data-i18n="minimaxStep">Я протестував нову модель Minimax H3 та згенерував з її допомогою lip sync відео з аватаром.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="story-row" data-reveal>
+                        <div class="story-copy raised-card">
+                            <p><strong data-i18n="animationLabel">Візуалізація UI.</strong> <span data-i18n="uiP1">Для цього відео я переніс асети з Figma до After Effects за допомогою Overlord, зберігши їхню пошарову структуру, а потім анімував безпосередньо в AE.</span></p>
+                        </div>
+                        <div class="story-media raised-card">
+                            <figure class="asset-slot asset-slot--overlord" data-kind="video" data-src="assets/overlord.webm">
+                                <div class="asset-slot__stage"><div class="asset-slot__fallback"><span class="asset-slot__ratio">Video loop</span><span class="asset-slot__name">Overlord</span><span class="asset-slot__file">overlord.webm</span></div></div>
+                                <figcaption><span>Overlord</span><span>Loop</span></figcaption>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <aside class="subtitle-card raised-card" data-reveal>
+                        <span class="subtitle-card__icon" aria-hidden="true">CC</span>
+                        <p><strong data-i18n="subtitlesLabel">Субтитри.</strong> <span data-i18n="subtitles">Я додав субтитри, щоб рекламний креатив сприймався навіть без увімкненого звуку.</span></p>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section page-section--white" id="task-two" aria-labelledby="task-two-title">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <span class="section-chip" data-i18n="taskTwoLabel">Завдання 2</span>
+                    <h2 id="task-two-title" data-i18n="taskTwoHeading">Редизайн статичних банерів</h2>
+                </div>
+                <div class="task-two-summary raised-card" data-reveal>
+                    <p class="task-two-summary__intro" data-i18n="staticConcepts">Під час розробки статичних банерів я відштовхувався від логіки наведених референсів, де візуальний ряд безпосередньо резонує з контекстом цільової аудиторії — як це реалізовано для ніш Airbnb, б’юті та e-commerce — і відповідає стилю продукту Zeely.</p>
+                    <p class="task-two-summary__label" data-i18n="staticHighlightsTitle">Ключові акценти концепції:</p>
+                    <ul class="task-two-points">
+                        <li><strong data-i18n="staticContextLabel">Контекстна відповідність:</strong> <span data-i18n="staticContextCopy">Для сегмента соло-підприємців та фрілансерів підібрано візуальні образи, що транслюють робочу рутину, фокус на масштабуванні та сучасний діджитал-лайфстайл.</span></li>
+                        <li><strong data-i18n="staticStopScrollLabel">Stop-scroll композиція:</strong> <span data-i18n="staticStopScrollCopy">Використано динамічні ракурси, контрастні силуети та інші прийоми, що миттєво виділяють банер у стрічці.</span></li>
+                        <li><strong data-i18n="staticHierarchyLabel">Ієрархія та CTA:</strong> <span data-i18n="staticHierarchyCopy">Текстовий скрипт структуровано з чітким фокусом на офері, ключових булетах вигоди AI-продукту, контрастних тригерах і кнопках дії.</span></li>
+                    </ul>
+                    <p class="task-two-summary__closing" data-i18n="staticClosing">Такий підхід дозволяє протестувати різні візуальні гачки — від агресивного контрасту до чистого мінімалізму — у межах єдиної комунікаційної стратегії.</p>
+                </div>
+                <div class="static-gallery">
+                    <figure class="static-gallery__item" data-reveal>
+                        <div class="static-gallery__media"><img src="assets/v1.webp" alt="Варіант статичного банера 1" data-i18n-alt="staticVariant" data-variant="1" loading="lazy"></div>
+                        <figcaption><span>01</span><span>1080 × 1920</span></figcaption>
+                    </figure>
+                    <figure class="static-gallery__item" data-reveal>
+                        <div class="static-gallery__media"><img src="assets/v2.webp" alt="Варіант статичного банера 2" data-i18n-alt="staticVariant" data-variant="2" loading="lazy"></div>
+                        <figcaption><span>02</span><span>1080 × 1920</span></figcaption>
+                    </figure>
+                    <figure class="static-gallery__item" data-reveal>
+                        <div class="static-gallery__media"><img src="assets/v3.webp" alt="Варіант статичного банера 3" data-i18n-alt="staticVariant" data-variant="3" loading="lazy"></div>
+                        <figcaption><span>03</span><span>1080 × 1920</span></figcaption>
+                    </figure>
+                    <figure class="static-gallery__item" data-reveal>
+                        <div class="static-gallery__media"><img src="assets/v4.webp" alt="Варіант статичного банера 4" data-i18n-alt="staticVariant" data-variant="4" loading="lazy"></div>
+                        <figcaption><span>04</span><span>1080 × 1920</span></figcaption>
+                    </figure>
+                    <figure class="static-gallery__item" data-reveal>
+                        <div class="static-gallery__media"><img src="assets/v5.webp" alt="Варіант статичного банера 5" data-i18n-alt="staticVariant" data-variant="5" loading="lazy"></div>
+                        <figcaption><span>05</span><span>1080 × 1920</span></figcaption>
+                    </figure>
+                    <figure class="static-gallery__item" data-reveal>
+                        <div class="static-gallery__media"><img src="assets/v6.webp" alt="Варіант статичного банера 6" data-i18n-alt="staticVariant" data-variant="6" loading="lazy"></div>
+                        <figcaption><span>06</span><span>1080 × 1920</span></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-card dark-card">
+            <p data-i18n="authorName">Олександр Кухарик</p>
+            <p>Growe · <span data-i18n="headerTask">Тестове завдання</span></p>
+            <a href="#top" data-i18n="backToTop">На початок ↑</a>
+        </div>
+    </footer>
+
+    <script src="js/plugins/gsap.min.js"></script>
+    <script src="js/plugins/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
