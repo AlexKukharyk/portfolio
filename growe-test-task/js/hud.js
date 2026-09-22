@@ -103,8 +103,6 @@
         revealTargets.push(panel);
     });
     document.querySelector(".header-bar")?.appendChild(createDivider());
-    document.querySelector(".hero-content > h1")?.after(createDivider());
-    document.querySelectorAll(".section-heading").forEach((heading) => heading.appendChild(createDivider()));
     document.querySelector(".site-footer")?.prepend(createDivider());
 
     function show(target) {
