@@ -11,3 +11,5 @@ The interface uses a dark palette, local Roboto and PT Mono fonts, and the suppl
 No navigation or project links to this page are added to the portfolio. Unused source archives are kept locally and excluded from publication.
 
 HUD corner brackets, SVG line reveals, and short button glitches are inspired by https://growe.partners/. They are implemented locally in `css/hud.css` and `js/hud.js`, follow the selected language, and respect reduced-motion preferences.
+
+The task order follows the Growe brief: Task 1 is Instagram carousel design; Task 2 is DIY Reel Created Entirely via AI. Six static slide placeholders use 1080 × 1440 (3:4) artboards in both the results carousel and the gallery, with carousel controls outside the artboard. The remaining process copy and video are retained until final content is supplied.

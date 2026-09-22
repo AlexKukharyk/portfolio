@@ -120,7 +120,7 @@ button, a, [tabindex] { outline-offset: 5px; }
 /* Results retain their original two-column presentation. */
 .hero-panel { position: relative; padding: clamp(158px, 13vw, 196px) 0 100px; border-bottom: 1px solid var(--line); }
 .hero-content > h1 { margin-bottom: 52px; padding-bottom: 28px; border-bottom: 1px solid var(--line); color: var(--brand); font-size: clamp(66px, 8vw, 112px); }
-.results-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; width: min(100%, 860px); margin-inline: auto; }
+.results-grid { display: grid; align-items: start; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; width: min(100%, 860px); margin-inline: auto; }
 .result-card { position: relative; min-width: 0; padding: 16px 16px 26px; }
 .card-number { display: grid; width: 46px; height: 28px; margin: 0 0 16px auto; place-items: center; color: var(--body); background: var(--brand-dark); clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%); font: 12px var(--mono); }
 .result-card__title { margin-top: 20px; font-size: clamp(17px, 1.6vw, 21px); font-weight: 500; line-height: 1.35; }
@@ -175,7 +175,8 @@ button, a, [tabindex] { outline-offset: 5px; }
 .asset-slot--static .asset-slot__stage > img, .asset-slot--static-large .asset-slot__stage > img { padding: 0; }
 .asset-slot.is-loaded .asset-slot__fallback { visibility: hidden; }
 .asset-slot figcaption { display: flex; justify-content: space-between; gap: 16px; margin-top: 12px; color: var(--secondary); font: 10px/1.4 var(--mono); text-transform: uppercase; }
-.asset-slot--portrait .asset-slot__stage, .asset-slot--static .asset-slot__stage, .asset-slot--static-large .asset-slot__stage, .asset-slot--transition .asset-slot__stage { aspect-ratio: 9 / 16; }
+.asset-slot--portrait .asset-slot__stage, .asset-slot--transition .asset-slot__stage { aspect-ratio: 9 / 16; }
+.asset-slot--static .asset-slot__stage, .asset-slot--static-large .asset-slot__stage { aspect-ratio: 3 / 4; }
 .asset-slot--portrait .asset-slot__stage > video:fullscreen { position: fixed; inset: 0; width: 100vw; height: 100vh; max-width: none; max-height: none; object-fit: contain; background: var(--body); }
 .asset-slot--portrait .asset-slot__stage > video:-webkit-full-screen { position: fixed; inset: 0; width: 100vw; height: 100vh; max-width: none; max-height: none; object-fit: contain; background: var(--body); }
 .asset-slot--logo-mark .asset-slot__stage, .asset-slot--create .asset-slot__stage { aspect-ratio: 1; }
@@ -194,8 +195,8 @@ button, a, [tabindex] { outline-offset: 5px; }
 .video-play:hover { background: var(--brand-dark); }
 .video-play svg { width: 24px; fill: currentColor; }
 .asset-slot.is-playing .video-play { opacity: 0; pointer-events: none; }
-.creative-carousel__frame { display: grid; grid-template-rows: minmax(0, 1fr) 44px; gap: 12px; aspect-ratio: 9 / 16; padding: 10px; border: 1px solid var(--line); }
-.asset-slot--static .asset-slot__stage.creative-carousel__viewport { min-height: 0; aspect-ratio: auto; touch-action: pan-y; }
+.creative-carousel__frame { display: grid; grid-template-rows: auto 44px; gap: 12px; padding: 10px; border: 1px solid var(--line); }
+.asset-slot--static .asset-slot__stage.creative-carousel__viewport { min-height: 0; aspect-ratio: 3 / 4; touch-action: pan-y; }
 .creative-carousel__slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.3s; }
 .creative-carousel__slide.is-active { z-index: 1; opacity: 1; }
 .creative-carousel__slide img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
@@ -206,7 +207,27 @@ button, a, [tabindex] { outline-offset: 5px; }
 .carousel-arrow:hover { color: var(--body); background: var(--brand); }
 .carousel-arrow svg { width: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; }
 
-/* Before / after and the second task. */
+/* True 3:4 artboards; carousel controls sit outside the creative area. */
+.creative-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: clamp(14px, 2vw, 24px);
+    color: var(--secondary);
+    background: var(--body);
+    border: 1px solid var(--line);
+    font-family: var(--mono);
+}
+.creative-placeholder__index { color: var(--brand-dark); font-size: 11px; }
+.creative-placeholder__content { display: grid; gap: 12px; justify-items: center; text-align: center; }
+.creative-placeholder__symbol { display: block; width: 30px; aspect-ratio: 3 / 4; margin-bottom: 8px; border: 1px solid var(--brand-dark); }
+.creative-placeholder__size { font-size: clamp(14px, 1.8vw, 26px); line-height: 1.2; white-space: nowrap; }
+.creative-placeholder__label { font-size: 10px; line-height: 1.5; }
+.creative-placeholder__ratio { align-self: flex-end; color: var(--brand-dark); font-size: 10px; }
+
+/* Before / after and task details. */
 .comparison-stage { display: grid; align-items: center; }
 .script-comparison { display: grid; grid-template-columns: 1fr 24px 1fr; gap: 12px; align-items: stretch; }
 .script-card { display: flex; min-width: 0; flex-direction: column; border: 1px solid var(--line); }
@@ -228,7 +249,7 @@ button, a, [tabindex] { outline-offset: 5px; }
 .task-two-summary__closing { margin-top: 32px; color: var(--secondary); font-size: clamp(17px, 1.5vw, 20px); line-height: 1.6; }
 .static-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: start; }
 .static-gallery__item { min-width: 0; padding: 10px 10px 16px; border: 1px solid var(--line); }
-.static-gallery__media { overflow: hidden; aspect-ratio: 9 / 16; background: var(--line); }
+.static-gallery__media { overflow: hidden; aspect-ratio: 3 / 4; background: var(--line); }
 .static-gallery__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .static-gallery__item figcaption { display: flex; justify-content: space-between; gap: 10px; padding: 14px 2px 0; color: var(--secondary); font: 10px/1.4 var(--mono); }
 .static-gallery__item figcaption span:first-child { color: var(--brand); }
