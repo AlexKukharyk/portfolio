@@ -1,6 +1,6 @@
 # Growe — Test Task Presentation
 
-Presentation by Oleksandr Kukharyk. The existing task content and the Ukrainian / English translations are preserved for the next content-editing pass.
+Presentation by Oleksandr Kukharyk. Task 1 now presents the finished six-slide carousel and its design process in Ukrainian and English. Task 2 retains its existing video and process content for a later update.
 
 Published page: https://alexkukharyk.github.io/portfolio/growe-test-task/index.html
 
@@ -12,4 +12,4 @@ No navigation or project links to this page are added to the portfolio. Unused s
 
 HUD corner brackets, SVG line reveals, and short button glitches are inspired by https://growe.partners/. They are implemented locally in `css/hud.css` and `js/hud.js`, follow the selected language, and respect reduced-motion preferences.
 
-The task order follows the Growe brief: Task 1 is Instagram carousel design; Task 2 is DIY Reel Created Entirely via AI. Six static slide placeholders use 1080 × 1440 (3:4) artboards in both the results carousel and the gallery, with carousel controls outside the artboard. The remaining process copy and video are retained until final content is supplied.
+The task order follows the Growe brief: Task 1 is Instagram carousel design; Task 2 is DIY Reel Created Entirely via AI. Six finished 1080 × 1440 PNGs appear in the results carousel and full-size gallery. The full-width process section includes a silent looping placeholder, a compact Blender Pro specimen using local WOFF2 files, and the supplied compact logo. Downloads and Figma links point to the Growe deliverables. Task 2 remains unchanged.

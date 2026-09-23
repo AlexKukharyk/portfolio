@@ -1,2 +1,6 @@
 # Local source archives are not needed by the presentation.
 assets/*.zip
+
+# Keep original font packages locally; publish only the webfonts in use.
+assets/fonts/Blender/*
+!assets/fonts/Blender/*.woff2
