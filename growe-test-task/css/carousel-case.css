@@ -41,7 +41,7 @@
 .type-sample__italic, .type-sample__glyphs { font: var(--sample-weight) 26px/1.15 "Blender Pro", sans-serif; color: var(--secondary); }
 .type-sample__italic { font-style: italic; }
 .process-logo { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(240px, 1fr); align-items: center; gap: 56px; border-top: 1px solid var(--line); padding-top: 40px; }
-.process-logo__figure { justify-self: center; width: min(100%, 320px); }
+.process-logo__figure { justify-self: end; width: min(100%, 320px); }
 .process-logo__figure img { width: 100%; height: auto; border: 1px solid var(--line); }
 .process-logo__figure figcaption { margin-top: 12px; color: var(--secondary); text-align: center; font: 10px/1.5 var(--mono); }
 .process-tools { border-top: 1px solid var(--line); padding-top: 28px; }
@@ -86,4 +86,28 @@ a.static-gallery__media { display: block; cursor: zoom-in; }
     .type-sample__word { font-size: 38px; }
     .type-sample__italic, .type-sample__glyphs { font-size: 22px; }
     .process-loop__title { font-size: 17px; }
+}
+
+
+/* Task two: the same editorial grid, with a portrait results placeholder. */
+.reel-placeholder .asset-slot__stage { border: 1px solid var(--line); background: var(--body); }
+.reel-placeholder__copy { position: absolute; z-index: 3; left: 9%; right: 9%; bottom: 10%; display: grid; gap: 14px; pointer-events: none; }
+.reel-placeholder__copy .process-eyebrow { font-size: 10px; }
+.reel-placeholder__title { color: var(--secondary); font-size: clamp(23px, 2.6vw, 38px); line-height: 1.15; letter-spacing: -.025em; }
+.reel-placeholder__note { color: var(--secondary); font: 10px/1.5 var(--mono); }
+.reel-process, .reel-steps { display: grid; gap: 40px; min-width: 0; }
+.reel-context { border-left: 2px solid var(--brand-dark); padding: 8px 0 8px 28px; }
+.reel-context .process-eyebrow { margin-bottom: 18px; }
+.reel-context p { color: var(--secondary); font-size: clamp(16px, 1.4vw, 19px); line-height: 1.65; }
+.reel-time { border-top: 1px solid var(--line); padding-top: 28px; }
+.reel-time dl { margin: 22px 0 0; }
+.reel-time dl > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.reel-time dt { color: var(--secondary); font-size: 17px; line-height: 1.5; }
+.reel-time dd { margin: 0; color: var(--brand); font: 13px/1.6 var(--mono); white-space: nowrap; }
+@media (max-width: 760px) {
+    .reel-process, .reel-steps { gap: 28px; }
+    .reel-context { padding-left: 20px; }
+    .reel-time dt { font-size: 15px; }
+    .reel-time dl > div { gap: 18px; }
+    .reel-time dd { font-size: 12px; }
 }

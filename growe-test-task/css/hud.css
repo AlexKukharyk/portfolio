@@ -70,22 +70,23 @@
 .hud-divider__track { fill: none; stroke: var(--line); stroke-width: 1; }
 .hud-divider__trace { fill: none; stroke: currentColor; stroke-width: 1; opacity: 0.75; }
 .hud-divider__marker { fill: currentColor; transform-box: fill-box; transform-origin: center; }
-/* The backdrop ends at the SVG stroke, including its center notch.
-   Polygon x coordinates match 548 / 563 / 717 / 732 in the 1280px viewBox. */
+/* Full-viewport backdrop and rule; the inner bar keeps its original layout.
+   JS derives the notch positions from the inner bar so both shapes coincide. */
 .floating-header {
-    background: none;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-}
-.header-bar {
     --header-rule-height: 20px;
     --header-rule-drop: 14px;
     --header-rule-tail: 3px;
     --header-notch-depth: 16px;
+    --header-notch-outer: 92px;
+    --header-notch-inner: 77px;
     isolation: isolate;
-    border-bottom: 0;
+    background: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
 }
-.header-bar::before {
+.header-bar { isolation: auto; border-bottom: 0; }
+.header-bar::before, .header-bar::after { display: none; }
+.floating-header::before {
     position: absolute;
     inset: 0 0 calc(var(--header-rule-tail) - var(--header-rule-drop));
     z-index: -1;
@@ -95,19 +96,20 @@
     clip-path: polygon(
         0 0, 100% 0,
         100% calc(100% - var(--header-notch-depth)),
-        57.1875% calc(100% - var(--header-notch-depth)),
-        56.015625% 100%, 43.984375% 100%,
-        42.8125% calc(100% - var(--header-notch-depth)),
+        calc(50% + var(--header-notch-outer)) calc(100% - var(--header-notch-depth)),
+        calc(50% + var(--header-notch-inner)) 100%,
+        calc(50% - var(--header-notch-inner)) 100%,
+        calc(50% - var(--header-notch-outer)) calc(100% - var(--header-notch-depth)),
         0 calc(100% - var(--header-notch-depth))
     );
     pointer-events: none;
     content: "";
 }
-.header-bar::after { display: none; }
-.header-bar > .hud-divider {
+.floating-header > .hud-divider {
     position: absolute;
     bottom: calc(-1 * var(--header-rule-drop));
     left: 0;
+    width: 100%;
     height: var(--header-rule-height);
 }
 .hero-content > h1 { border-bottom: 0; }
@@ -173,7 +175,7 @@
     .hud-corner { width: 10px; height: 10px; }
     .site-footer > .hud-divider { width: calc(100% - 40px); }
     .hud-divider { height: 14px; }
-    .header-bar {
+    .floating-header {
         --header-rule-height: 14px;
         --header-rule-drop: 10px;
         --header-rule-tail: 2.1px;

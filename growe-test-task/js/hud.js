@@ -102,7 +102,37 @@
         panel.appendChild(createCorners());
         revealTargets.push(panel);
     });
-    document.querySelector(".header-bar")?.appendChild(createDivider());
+    const header = document.querySelector(".floating-header");
+    const headerBar = header?.querySelector(".header-bar");
+    if (header && headerBar) {
+        const divider = createDivider();
+        header.appendChild(divider);
+        const updateHeaderShape = () => {
+            const width = header.clientWidth;
+            const barWidth = headerBar.getBoundingClientRect().width;
+            const height = parseFloat(getComputedStyle(header).getPropertyValue("--header-rule-height"));
+            const scaleY = height / 20;
+            const scaleX = barWidth / 1280;
+            const center = width / 2;
+            const outer = 92 * scaleX;
+            const inner = 77 * scaleX;
+            header.style.setProperty("--header-notch-outer", `${outer}px`);
+            header.style.setProperty("--header-notch-inner", `${inner}px`);
+            divider.setAttribute("viewBox", `0 0 ${width} ${height}`);
+            const shape = `M0 ${scaleY}H${center - outer}L${center - inner} ${17 * scaleY}H${center + inner}L${center + outer} ${scaleY}H${width}`;
+            divider.querySelectorAll(".hud-divider__track, .hud-divider__trace").forEach((path) => path.setAttribute("d", shape));
+            divider.querySelector(".hud-divider__marker").setAttribute("d",
+                `M${center - 5 * scaleX} ${2 * scaleY}L${center - scaleX} ${5 * scaleY}L${center - 5 * scaleX} ${8 * scaleY}ZM${center + 5 * scaleX} ${2 * scaleY}L${center + scaleX} ${5 * scaleY}L${center + 5 * scaleX} ${8 * scaleY}Z`);
+        };
+        updateHeaderShape();
+        if ("ResizeObserver" in window) {
+            const headerResize = new ResizeObserver(updateHeaderShape);
+            headerResize.observe(header);
+            headerResize.observe(headerBar);
+        } else {
+            window.addEventListener("resize", updateHeaderShape, { passive: true });
+        }
+    }
     document.querySelector(".site-footer")?.prepend(createDivider());
 
     function show(target) {

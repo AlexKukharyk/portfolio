@@ -10,8 +10,8 @@
     <link rel="preload" href="assets/fonts/roboto-variable.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="assets/fonts/pt-mono-regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="css/style.css?v=card-alignment-1">
-    <link rel="stylesheet" href="css/hud.css?v=header-contour-1">
-    <link rel="stylesheet" href="css/carousel-case.css?v=carousel-case-1">
+    <link rel="stylesheet" href="css/hud.css?v=full-header-2">
+    <link rel="stylesheet" href="css/carousel-case.css?v=reel-case-2">
 </head>
 <body>
     <div class="preloader" aria-hidden="true">
@@ -91,18 +91,12 @@
 
                     <article class="result-card raised-card" data-reveal>
                         <div class="card-number">02</div>
-                        <figure class="asset-slot asset-slot--portrait" data-kind="video" data-src="assets/9x16.mp4" data-controls="true" data-poster="assets/cover.png">
+                        <figure class="asset-slot asset-slot--portrait reel-placeholder">
                             <div class="asset-slot__stage">
-                                <div class="asset-slot__fallback">
-                                    <span class="asset-slot__ratio">9:16</span>
-                                    <span class="asset-slot__name" data-i18n="videoCreative">Відео‑креатив</span>
-                                    <span class="asset-slot__file">9x16.mp4</span>
-                                </div>
-                                <button class="video-play" type="button" aria-label="Відтворити відео">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 9 6-9 6Z"/></svg>
-                                </button>
+                                <video autoplay loop muted playsinline preload="metadata" poster="assets/reel-placeholder.webp" aria-hidden="true" tabindex="-1" data-decorative-video><source src="assets/reel-placeholder.webm" type="video/webm"></video>
+                                <div class="reel-placeholder__copy"><span class="process-eyebrow">GROWE PARTNERS / REEL</span><span class="reel-placeholder__title" data-i18n="reelPlaceholderTitle">Рілс — незабаром</span><span class="reel-placeholder__note" data-i18n="reelPlaceholderNote">Тимчасове прев’ю</span></div>
                             </div>
-                            <figcaption><span data-i18n="videoWithSound">Відео</span><span>MP4</span></figcaption>
+                            <figcaption><span data-i18n="videoWithSound">Відео</span><span>9:16</span></figcaption>
                         </figure>
                         <p class="result-card__title" data-i18n="taskTwoTitle">Завдання 2 — Instagram-рілс</p>
                     </article>
@@ -130,7 +124,7 @@
                 <div class="section-heading" data-reveal>
                     <span class="section-chip" data-i18n="taskOneLabel">Завдання 1</span>
                     <h2 id="task-one-title" data-i18n="taskOneHeading">Carousel</h2>
-                    <p class="section-heading__description" data-i18n="taskOneDescription">Дизайн каруселі для Instagram</p>
+
                 </div>
                 <div class="carousel-process">
                     <div class="process-intro" data-reveal>
@@ -147,7 +141,7 @@
                         </div>
                     </article>
                     <figure class="process-loop" data-reveal>
-                        <video autoplay loop muted playsinline preload="metadata" poster="assets/process-placeholder.webp" aria-hidden="true" tabindex="-1"><source src="assets/process-placeholder.webm" type="video/webm"></video>
+                        <video data-decorative-video autoplay loop muted playsinline preload="metadata" poster="assets/process-placeholder.webp" aria-hidden="true" tabindex="-1"><source src="assets/process-placeholder.webm" type="video/webm"></video>
                         <figcaption><span class="process-eyebrow" data-i18n="carouselVideoLabel">Процес роботи</span><span class="process-loop__title" data-i18n="carouselVideoSoon">Відео процесу — незабаром</span><span class="process-loop__note" data-i18n="carouselVideoNote">Тимчасове прев’ю</span></figcaption>
                         <span class="process-loop__ratio" aria-hidden="true">16:9</span>
                     </figure>
@@ -168,7 +162,7 @@
                     </article>
                     <aside class="process-tools" data-reveal>
                         <h3 class="process-eyebrow" data-i18n="carouselToolsLabel">Інструменти та AI-моделі</h3>
-                        <ul><li>Adobe Photoshop</li><li>Figma</li><li>ChatGPT</li><li>Nano Banana</li><li>Codex · GPT‑6 Astra</li><li>Adobe Firefly</li><li>Figma Agent (Beta)</li><li data-i18n="carouselExtension">HTML → Figma · розширення для Chrome</li></ul>
+                        <ul><li>Adobe Photoshop</li><li>Figma</li><li>ChatGPT</li><li>Gemini</li><li>Nano Banana</li><li>Codex · GPT‑6 Astra</li><li>Adobe Firefly</li><li>Figma Agent (Beta)</li><li data-i18n="carouselExtension">Figma · Chrome extension</li></ul>
                     </aside>
                 </div>
                 <div class="gallery-heading" data-reveal><h3 data-i18n="carouselGalleryTitle">Фінальна карусель</h3><p data-i18n="carouselGalleryNote">6 слайдів · 1080 × 1440</p></div>
@@ -208,131 +202,17 @@
                     <h2 id="task-two-title" data-i18n="taskTwoHeading">Reel</h2>
                     <p class="section-heading__description" data-i18n="taskTwoDescription">DIY-рілс, повністю створений за допомогою AI</p>
                 </div>
-
-                <div class="story-stack">
-                    <article class="story-row" data-reveal>
-                        <div class="story-copy raised-card">
-                            <p><strong data-i18n="preparationLabel">Підготовка.</strong> <span data-i18n="studyIntro">Спочатку я ознайомився з візуальним стилем продукту на сайті та підготував SVG-версію логотипу для використання в креативах.</span></p>
-                            <p class="text-note" data-i18n="studyNote">Уже під час анімації UI я також помітив логотип у наданих Figma-файлах.</p>
-                        </div>
-                        <div class="story-media raised-card">
-                            <div class="logo-assets">
-                                <figure class="asset-slot asset-slot--logo-full" data-kind="image" data-src="assets/Full Logo.svg">
-                                    <div class="asset-slot__stage"><div class="asset-slot__fallback"><span class="asset-slot__ratio">SVG</span><span class="asset-slot__name">Full Logo</span><span class="asset-slot__file">Full Logo.svg</span></div></div>
-                                    <figcaption><span>Full Logo</span><span>01</span></figcaption>
-                                </figure>
-                                <figure class="asset-slot asset-slot--logo-mark" data-kind="image" data-src="assets/Logo.svg">
-                                    <div class="asset-slot__stage"><div class="asset-slot__fallback"><span class="asset-slot__ratio">SVG</span><span class="asset-slot__name">Logo</span><span class="asset-slot__file">Logo.svg</span></div></div>
-                                    <figcaption><span>Logo</span><span>02</span></figcaption>
-                                </figure>
-                                <figure class="asset-slot asset-slot--research" data-kind="image" data-src="assets/logo_parcing.webp">
-                                    <div class="asset-slot__stage"><div class="asset-slot__fallback"><span class="asset-slot__ratio">16:9</span><span class="asset-slot__name">Logo parsing</span><span class="asset-slot__file">logo_parcing.webp</span></div></div>
-                                    <figcaption><span>Logo parsing</span><span>03</span></figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="story-row" data-reveal>
-                        <div class="story-copy story-copy--dark dark-card">
-                            <p><strong data-i18n="hookLabel">Концепція хука.</strong> <span data-i18n="hookP1">Я вирішив використати інший підхід до утримання уваги — pattern interrupt. Стрічки соцмереж переповнені класичним UGC: «голова, що говорить» плюс субтитри, і глядач уже навчився автоматично гортати такі відео в першу секунду.</span></p>
-                            <blockquote data-i18n="hookP2">Моя пропозиція — виразний швидкий моушн-дизайн на старті, який збиває звичний сценарій і зупиняє скрол.</blockquote>
-                            <p data-i18n="hookP3">За скриптом на перші три секунди припадає довге повідомлення. У виконанні реальної людини в кадрі воно звучало б зім’ято й неприродно. Швидка типографіка, pop-up бабли, SFX і візуальні акценти передають цей зміст ефективніше.</p>
-                            <p data-i18n="designCopy">Хук виконаний у мінімалістичному стилі продукту. Впізнаваний елемент UI в оригінальному кольорі #5DFCA5 використаний як знак генерації.</p>
-                        </div>
-                        <div class="story-media raised-card">
-                            <div class="design-assets">
-                                <figure class="asset-slot asset-slot--hook" data-kind="video" data-src="assets/hook.webm" aria-label="Hook video preview">
-                                    <div class="asset-slot__stage">
-                                        <div class="asset-slot__fallback">
-                                            <span class="asset-slot__ratio">Video</span>
-                                            <span class="asset-slot__name">Hook</span>
-                                            <span class="asset-slot__file">hook.webm</span>
-                                        </div>
-                                    </div>
-                                </figure>
-                                <figure class="asset-slot asset-slot--button" data-kind="image" data-src="assets/btn.svg">
-                                    <div class="asset-slot__stage"><div class="asset-slot__fallback"><span class="asset-slot__ratio">SVG</span><span class="asset-slot__name">Btn</span><span class="asset-slot__file">btn.svg</span></div></div>
-                                    <figcaption><span>Btn</span><span>01</span></figcaption>
-                                </figure>
-                                <figure class="asset-slot asset-slot--create" data-kind="image" data-src="assets/Create.svg">
-                                    <div class="asset-slot__stage"><div class="asset-slot__fallback"><span class="asset-slot__ratio">SVG</span><span class="asset-slot__name">Create</span><span class="asset-slot__file">Create.svg</span></div></div>
-                                    <figcaption><span>Create</span><span>02</span></figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="story-row" data-reveal>
-                        <div class="story-copy raised-card">
-                            <p><strong data-i18n="scriptLabel">Сценарій.</strong> <span data-i18n="scriptP1">Хук задає високу динаміку й показує «магію» — обіцянку сильного результату. Після цього ми органічно переходимо в UGC-частину та реальний інтерфейс Zeely з тими самими впізнаваними елементами.</span></p>
-                            <p data-i18n="scriptP2">Спочатку продаємо емоцію і результат, потім показуємо, наскільки легко цього досягти з продуктом. Тому фінальний скрипт був дещо змінений під запропоновану візуальну концепцію.</p>
-                        </div>
-                        <div class="comparison-stage raised-card">
-                            <div class="script-comparison">
-                                <article class="script-card">
-                                    <header><span>Before</span><strong data-i18n="briefScript">Скрипт із ТЗ</strong></header>
-                                    <div class="script-card__body">
-                                        <p><span>[HOOK]</span>You can make a full ad — real locations, your product, even yourself in it. And it looks real.</p>
-                                        <p><span>[BODY]</span>Go to Video Ads and start a new video.<br>Pick a preset, then upload your photo or product.<br>Choose a reference. Keep the avatar or change it.<br>Type a simple prompt — or let AI handle it.<br>Hit Generate. Pick a start frame and animate.<br>And here’s what you get.</p>
-                                        <p><span>[CTA]</span>Try it NOW</p>
-                                    </div>
-                                </article>
-                                <div class="comparison-arrow" aria-hidden="true"><svg viewBox="0 0 100 48"><path d="M2 24h91M72 3l21 21-21 21"/></svg></div>
-                                <article class="script-card script-card--accent">
-                                    <header><span>After</span><strong data-i18n="newScript">Новий скрипт / Voiceover</strong></header>
-                                    <div class="script-card__body">
-                                        <p><span>[HOOK]</span>Need a killer video ad? Add any locations, products, scripts, voices, avatars. Watch this 👀.</p>
-                                        <p><span>[BODY]</span>Go to Video Ads and start a new video.<br>Pick a preset, then upload your photo or product.<br>Choose a reference. Keep the avatar or change it.<br>Type a simple prompt — or let AI handle it.<br>Hit Generate. Pick a start frame and animate.<br>And here’s what you get.</p>
-                                        <p><span>[CTA] + logo</span>Try it NOW</p>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="story-row story-row--single" data-reveal>
-                        <div class="story-copy story-copy--pipeline dark-card">
-                            <p><strong data-i18n="aiPipelineLabel">Voiceover та AI-аватар.</strong> <span data-i18n="aiPipelineIntro">Voiceover я згенерував окремо, після чого створив візуальний референс персонажа та lip sync відео з аватаром.</span></p>
-                            <div class="service-flow">
-                                <div class="service-step">
-                                    <span class="service-step__index">01</span>
-                                    <strong>ElevenLabs</strong>
-                                    <span data-i18n="elevenLabsStep">Окрема генерація voiceover.</span>
-                                </div>
-                                <div class="service-step">
-                                    <span class="service-step__index">02</span>
-                                    <strong>Nano Banana Pro</strong>
-                                    <span data-i18n="nanoBananaStep">Генерація візуального референсу персонажа.</span>
-                                </div>
-                                <div class="service-step">
-                                    <span class="service-step__index">03</span>
-                                    <strong>Minimax H3</strong>
-                                    <span data-i18n="minimaxStep">Я протестував нову модель Minimax H3 та згенерував з її допомогою lip sync відео з аватаром.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="story-row" data-reveal>
-                        <div class="story-copy raised-card">
-                            <p><strong data-i18n="animationLabel">Візуалізація UI.</strong> <span data-i18n="uiP1">Для цього відео я переніс асети з Figma до After Effects за допомогою Overlord, зберігши їхню пошарову структуру, а потім анімував безпосередньо в AE.</span></p>
-                        </div>
-                        <div class="story-media raised-card">
-                            <figure class="asset-slot asset-slot--overlord" data-kind="video" data-src="assets/overlord.webm">
-                                <div class="asset-slot__stage"><div class="asset-slot__fallback"><span class="asset-slot__ratio">Video loop</span><span class="asset-slot__name">Overlord</span><span class="asset-slot__file">overlord.webm</span></div></div>
-                                <figcaption><span>Overlord</span><span>Loop</span></figcaption>
-                            </figure>
-                        </div>
-                    </article>
-
-                    <aside class="subtitle-card raised-card" data-reveal>
-                        <span class="subtitle-card__icon" aria-hidden="true">CC</span>
-                        <p><strong data-i18n="subtitlesLabel">Субтитри.</strong> <span data-i18n="subtitles">Я додав субтитри, щоб рекламний креатив сприймався навіть без увімкненого звуку.</span></p>
-                    </aside>
-                </div>
-            </div>
-        </section>
+                <div class="reel-process">
+                    <div class="process-intro" data-reveal><h3 class="process-eyebrow" data-i18n="reelProcessTitle">Як я створював відео</h3><p class="process-lead" data-i18n="reelProcessIntro">В основі ролика — ключові кадри, згенеровані за візуальними референсами. Частину матеріалів я знайшов у відкритих джерелах, зокрема Pinterest, і доповнив їх референсами локацій та брендингу з Instagram Growe Partners.</p></div>
+                    <aside class="reel-context" data-reveal><h3 class="process-eyebrow" data-i18n="reelContextTitle">Контекст тестового завдання</h3><p data-i18n="reelContextCopy">Не маючи повного уявлення про бізнес-модель Growe Partners, у межах тестового я творчо інтерпретував локації, офіс, офери та інші деталі. У реальному проєкті перед фіналізацією сценарію я уточнив би бізнес-контекст і запросив погоджені референси, актуальні дані та бренд-матеріали.</p></aside>
+                    <div class="reel-steps">
+<article class="process-step" data-reveal><aside class="process-step__meta"><span class="process-step__index">01 / RESEARCH</span></aside><div class="process-step__copy"><h3 data-i18n="reelResearchTitle">Референс і сценарій</h3><p data-i18n="reelResearchCopy">На Instagram-сторінці медіабаїнгової команди я знайшов короткий динамічний рілс, який відповідав DIY-формату з брифу. Визначив кількість сцен і підготував сценарій за допомогою Gemini та ChatGPT.</p></div></article>
+<article class="process-step" data-reveal><aside class="process-step__meta"><span class="process-step__index">02 / KEYFRAMES</span></aside><div class="process-step__copy"><h3 data-i18n="reelFramesTitle">Генерація ключових кадрів</h3><p data-i18n="reelFramesCopy">Підготував візуальні референси для сцен і на їхній основі згенерував ключові кадри у ChatGPT та Nano Banana.</p></div></article>
+<article class="process-step" data-reveal><aside class="process-step__meta"><span class="process-step__index">03 / MOTION</span></aside><div class="process-step__copy"><h3 data-i18n="reelAnimationTitle">Від ключових кадрів до відео</h3><p data-i18n="reelAnimationCopy">У Magnific використав модель Seedance 2.5, щоб анімувати підготовлені ключові кадри та отримати окремі відеофрагменти для монтажу.</p></div></article>
+<article class="process-step" data-reveal><aside class="process-step__meta"><span class="process-step__index">04 / AUDIO</span></aside><div class="process-step__copy"><h3 data-i18n="reelAudioTitle">Музика, voiceover і звукові ефекти</h3><p data-i18n="reelAudioCopy">За допомогою Ultimate Vocal Remover (UVR) розділив аудіодоріжку референсу на стеми та прибрав закадровий голос. Решту звукової основи використав як референс для генерації аудіо в Suno.</p><p data-i18n="reelVoiceCopy">Озвучку згенерував в ElevenLabs. Після цього звів музичну доріжку, voiceover і звукові ефекти.</p></div></article>
+<article class="process-step" data-reveal><aside class="process-step__meta"><span class="process-step__index">05 / EDIT</span></aside><div class="process-step__copy"><h3 data-i18n="reelEditTitle">Монтаж і фінальна анімація</h3><p data-i18n="reelEditCopy">Зібрав відеофрагменти в цілісний ролик. Для фіналу створив анімацію логотипу Growe Partners безпосередньо в Adobe After Effects.</p></div></article>
+<article class="process-step" data-reveal><aside class="process-step__meta"><span class="process-step__index">06 / CAPTIONS</span></aside><div class="process-step__copy"><h3 data-i18n="reelCaptionsTitle">Субтитри та композитинг</h3><p data-i18n="reelCaptionsCopy">Завантажив аудіодоріжку в сервіс генерації субтитрів і отримав відео з титрами на зеленому фоні. Прибрав фон ефектом Keylight в After Effects і наклав субтитри на ролик, щоб він залишався зрозумілим без звуку.</p></div></article>
+</div><aside class="process-tools" data-reveal><h3 class="process-eyebrow" data-i18n="reelToolsTitle">Інструменти, сервіси та AI-моделі</h3><ul><li>Adobe After Effects</li><li>Adobe Media Encoder</li><li>Adobe Photoshop</li><li>Figma</li><li>ChatGPT</li><li>Gemini</li><li>Nano Banana</li><li>Adobe Firefly</li><li>Ultimate Vocal Remover</li><li>Suno</li><li>ElevenLabs</li><li>Magnific</li><li>Seedance 2.5</li><li>Envato Elements</li><li data-i18n="reelSubtitleService">Сервіс генерації субтитрів</li></ul></aside><section class="reel-time" aria-labelledby="reel-time-title" data-reveal><h3 class="process-eyebrow" id="reel-time-title" data-i18n="reelTimeTitle">Орієнтовний час роботи</h3><dl><div><dt data-i18n="reelTimeResearch">Знайомство з брендом і пошук матеріалів</dt><dd data-i18n="reelTimeResearchValue">≈3–4 год</dd></div><div><dt data-i18n="reelTimeScript">Сценарій</dt><dd data-i18n="reelTimeScriptValue">≈20 хв</dd></div><div><dt data-i18n="reelTimeAudio">Генерація та робота зі звуком: SFX, voiceover, музика</dt><dd data-i18n="reelTimeHour">≈1 год</dd></div><div><dt data-i18n="reelTimeFrames">Генерація ключових кадрів</dt><dd data-i18n="reelTimeFramesValue">≈2 год</dd></div><div><dt data-i18n="reelTimeAnimation">Генерація відеофрагментів</dt><dd data-i18n="reelTimeHour">≈1 год</dd></div><div><dt data-i18n="reelTimeCaptions">Субтитри</dt><dd data-i18n="reelTimeCaptionsValue">≈10–15 хв</dd></div><div><dt data-i18n="reelTimeEdit">Монтаж і зведення</dt><dd data-i18n="reelTimeEditValue">≈30 хв</dd></div></dl></section></div></div></section>
     </main>
 
     <footer class="site-footer">
@@ -345,7 +225,7 @@
 
     <script src="js/plugins/gsap.min.js"></script>
     <script src="js/plugins/ScrollTrigger.min.js"></script>
-    <script src="js/main.js?v=carousel-case-1"></script>
-    <script src="js/hud.js?v=header-contour-1"></script>
+    <script src="js/main.js?v=reel-case-2"></script>
+    <script src="js/hud.js?v=full-header-2"></script>
 </body>
 </html>
