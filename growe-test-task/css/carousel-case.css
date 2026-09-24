@@ -83,7 +83,6 @@ a.static-gallery__media { display: block; cursor: zoom-in; }
 
 /* Task two: workflow and the finished portrait reel. */
 .reel-player .asset-slot__stage { border: 1px solid var(--line); background: var(--body); }
-.reel-player .video-play { top: 65%; }
 .reel-player .video-play[hidden] { display: none; }
 .reel-player--final { width: min(100%, 480px); justify-self: center; }
 .reel-process, .reel-steps { display: grid; gap: 40px; min-width: 0; }
