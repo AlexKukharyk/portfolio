@@ -4,7 +4,7 @@
     const copy = {
         ua: {
             reelProcessTitle: "Як я створював відео",
-            reelProcessIntro: "Під час розробки відео я спирався на ключові кадри, які генерував на основі референсів. Деякі референси брав із відкритих джерел на кшталт Pinterest і додавав референси локацій та брендингу Growe Partners з Instagram.",
+            reelProcessIntro: "Під час розробки відео я спирався на ключові кадри, які генерував на основі референсів.",
             reelContextTitle: "Контекст тестового завдання",
             reelContextCopy: "Окремо одразу зазначу, що я не знайомий із бізнес-моделлю Growe Partners. У реальних умовах під час складання скрипту я спирався б на уточнені дані. У тестовому завданні я імпровізував із генерацією локацій та офісу, випадковими оферами й іншими деталями. У реальному завданні я запитував би відповідні референси та матеріали.",
             reelResearchTitle: "Референс і сценарій",
@@ -98,7 +98,7 @@
         },
         en: {
             reelProcessTitle: "How I made the reel",
-            reelProcessIntro: "When developing the video, I relied on keyframes that I generated from references. I took some references from public sources such as Pinterest and added references for Growe Partners locations and branding from Instagram.",
+            reelProcessIntro: "When developing the video, I relied on keyframes that I generated from references.",
             reelContextTitle: "The test-task context",
             reelContextCopy: "I would like to note upfront that I am not familiar with Growe Partners’ business model. In a real project, I would base the script on verified information. For this test task, I improvised with generated locations and office spaces, random offers and other details. In a real project, I would request the relevant references and materials.",
             reelResearchTitle: "Reference and script",
