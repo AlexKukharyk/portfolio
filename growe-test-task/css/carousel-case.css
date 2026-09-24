@@ -89,12 +89,11 @@ a.static-gallery__media { display: block; cursor: zoom-in; }
 }
 
 
-/* Task two: the same editorial grid, with a portrait results placeholder. */
-.reel-placeholder .asset-slot__stage { border: 1px solid var(--line); background: var(--body); }
-.reel-placeholder__copy { position: absolute; z-index: 3; left: 9%; right: 9%; bottom: 10%; display: grid; gap: 14px; pointer-events: none; }
-.reel-placeholder__copy .process-eyebrow { font-size: 10px; }
-.reel-placeholder__title { color: var(--secondary); font-size: clamp(23px, 2.6vw, 38px); line-height: 1.15; letter-spacing: -.025em; }
-.reel-placeholder__note { color: var(--secondary); font: 10px/1.5 var(--mono); }
+/* Task two: workflow and the finished portrait reel. */
+.reel-player .asset-slot__stage { border: 1px solid var(--line); background: var(--body); }
+.reel-player .video-play { top: 65%; }
+.reel-player .video-play[hidden] { display: none; }
+.reel-player--final { width: min(100%, 480px); justify-self: center; }
 .reel-process, .reel-steps { display: grid; gap: 40px; min-width: 0; }
 .reel-context { border-left: 2px solid var(--brand-dark); padding: 8px 0 8px 28px; }
 .reel-context .process-eyebrow { margin-bottom: 18px; }

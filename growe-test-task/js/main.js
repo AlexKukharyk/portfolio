@@ -3,8 +3,6 @@
 
     const copy = {
         ua: {
-            reelPlaceholderTitle: "Рілс — незабаром",
-            reelPlaceholderNote: "Тимчасове прев’ю",
             reelProcessTitle: "Як я створював відео",
             reelProcessIntro: "Під час розробки відео я спирався на ключові кадри, які генерував на основі референсів. Деякі референси брав із відкритих джерел на кшталт Pinterest і додавав референси локацій та брендингу Growe Partners з Instagram.",
             reelContextTitle: "Контекст тестового завдання",
@@ -22,9 +20,9 @@
             reelEditTitle: "Анімація логотипу",
             reelEditCopy: "Наприкінці відео додав анімацію логотипу Growe Partners, яку створив безпосередньо в After Effects.",
             reelCaptionsTitle: "Субтитри та композитинг",
-            reelCaptionsCopy: "Завантажив аудіодоріжку в сервіс генерації субтитрів і отримав відео з титрами на зеленому фоні. Прибрав фон ефектом Keylight в After Effects і наклав субтитри на ролик, щоб він залишався зрозумілим без звуку.",
+            reelCaptionsCopy: "Завантажив аудіодоріжку в сервіс генерації субтитрів VEED.io і отримав відео з титрами на зеленому фоні. Прибрав фон ефектом Keylight в After Effects і наклав субтитри на ролик, щоб він залишався зрозумілим без звуку.",
             reelToolsTitle: "Інструменти, сервіси та AI-моделі",
-            reelSubtitleService: "Сервіс генерації субтитрів",
+            reelSubtitleService: "VEED.io",
             reelTimeTitle: "Орієнтовний час роботи",
             reelTimeResearch: "Знайомство з брендом і пошук матеріалів",
             reelTimeResearchValue: "≈3–4 год",
@@ -33,8 +31,9 @@
             reelTimeAudio: "Генерація та робота зі звуком: SFX, voiceover, музика",
             reelTimeHour: "≈1 год",
             reelTimeFrames: "Генерація ключових кадрів",
-            reelTimeFramesValue: "≈2 год",
+            reelTimeFramesValue: "≈3 год",
             reelTimeAnimation: "Генерація відеофрагментів",
+            reelTimeAnimationValue: "≈2 год",
             reelTimeCaptions: "Субтитри",
             reelTimeCaptionsValue: "≈10–15 хв",
             reelTimeEdit: "Монтаж і зведення",
@@ -100,8 +99,6 @@
             staticPlaceholder: "Місце для слайда"
         },
         en: {
-            reelPlaceholderTitle: "Reel coming soon",
-            reelPlaceholderNote: "Temporary preview",
             reelProcessTitle: "How I made the reel",
             reelProcessIntro: "When developing the video, I relied on keyframes that I generated from references. I took some references from public sources such as Pinterest and added references for Growe Partners locations and branding from Instagram.",
             reelContextTitle: "The test-task context",
@@ -119,9 +116,9 @@
             reelEditTitle: "Logo animation",
             reelEditCopy: "At the end of the video, I added a Growe Partners logo animation that I created directly in After Effects.",
             reelCaptionsTitle: "Subtitles and compositing",
-            reelCaptionsCopy: "I uploaded the audio track to a subtitle-generation service and received a video with captions on a green background. I removed the background using the Keylight effect in After Effects and overlaid the subtitles on the reel so it would remain understandable without sound.",
+            reelCaptionsCopy: "I uploaded the audio track to the subtitle-generation service VEED.io and received a video with captions on a green background. I removed the background using the Keylight effect in After Effects and overlaid the subtitles on the reel so it would remain understandable without sound.",
             reelToolsTitle: "Tools, services and AI models",
-            reelSubtitleService: "Subtitle-generation service",
+            reelSubtitleService: "VEED.io",
             reelTimeTitle: "Approximate time spent",
             reelTimeResearch: "Brand research and sourcing references",
             reelTimeResearchValue: "≈3–4 hr",
@@ -130,8 +127,9 @@
             reelTimeAudio: "Audio generation and production: SFX, voiceover, music",
             reelTimeHour: "≈1 hr",
             reelTimeFrames: "Keyframe generation",
-            reelTimeFramesValue: "≈2 hr",
+            reelTimeFramesValue: "≈3 hr",
             reelTimeAnimation: "Video generation",
+            reelTimeAnimationValue: "≈2 hr",
             reelTimeCaptions: "Subtitles",
             reelTimeCaptionsValue: "≈10–15 min",
             reelTimeEdit: "Editing and mixing",
@@ -240,8 +238,9 @@
             button.setAttribute("aria-pressed", String(button.dataset.lang === language));
         });
 
-        const playButton = document.querySelector(".video-play");
-        if (playButton) playButton.setAttribute("aria-label", dictionary.playVideo);
+        document.querySelectorAll(".video-play").forEach((button) => {
+            button.setAttribute("aria-label", dictionary.playVideo);
+        });
 
         const goTopButton = document.querySelector(".go-top");
         if (goTopButton) goTopButton.setAttribute("aria-label", dictionary.backToTop);
@@ -390,6 +389,25 @@
         });
     }
 
+    function initializeReelPlayers() {
+        const players = [...document.querySelectorAll("[data-reel-player]")];
+        players.forEach((player) => {
+            const video = player.querySelector("video");
+            const button = player.querySelector(".video-play");
+            button.hidden = false;
+            button.addEventListener("click", () => video.play().catch(() => {}));
+            video.addEventListener("play", () => {
+                player.classList.add("is-playing");
+                players.forEach((other) => {
+                    if (other !== player) other.querySelector("video").pause();
+                });
+            });
+            ["pause", "ended"].forEach((event) => {
+                video.addEventListener(event, () => player.classList.remove("is-playing"));
+            });
+        });
+    }
+
     function hydrateAsset(slot) {
         return new Promise((resolve) => {
             const source = slot.dataset.src;
@@ -479,6 +497,7 @@
         });
     }
 
+    initializeReelPlayers();
     initializeMotion();
     initializeCarousels();
     initializeGoTop();

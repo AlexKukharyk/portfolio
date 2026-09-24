@@ -11,7 +11,7 @@
     <link rel="preload" href="assets/fonts/pt-mono-regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="css/style.css?v=card-alignment-1">
     <link rel="stylesheet" href="css/hud.css?v=full-header-2">
-    <link rel="stylesheet" href="css/carousel-case.css?v=reel-case-2">
+    <link rel="stylesheet" href="css/carousel-case.css?v=finished-reel-1">
 </head>
 <body>
     <div class="preloader" aria-hidden="true">
@@ -91,12 +91,12 @@
 
                     <article class="result-card raised-card" data-reveal>
                         <div class="card-number">02</div>
-                        <figure class="asset-slot asset-slot--portrait reel-placeholder">
+                        <figure class="asset-slot asset-slot--portrait reel-player" data-reel-player>
                             <div class="asset-slot__stage">
-                                <video autoplay loop muted playsinline preload="metadata" poster="assets/reel-placeholder.webp" aria-hidden="true" tabindex="-1" data-decorative-video><source src="assets/reel-placeholder.webm" type="video/webm"></video>
-                                <div class="reel-placeholder__copy"><span class="process-eyebrow">GROWE PARTNERS / REEL</span><span class="reel-placeholder__title" data-i18n="reelPlaceholderTitle">Рілс — незабаром</span><span class="reel-placeholder__note" data-i18n="reelPlaceholderNote">Тимчасове прев’ю</span></div>
+                                <video controls playsinline preload="metadata" poster="assets/cover.png?v=finished-reel-1"><source src="assets/1080x1920.mp4" type="video/mp4"></video>
+                                <button class="video-play" type="button" aria-label="Відтворити відео" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
                             </div>
-                            <figcaption><span data-i18n="videoWithSound">Відео</span><span>9:16</span></figcaption>
+                            <figcaption><span data-i18n="videoWithSound">Відео</span><span>1080 × 1920</span></figcaption>
                         </figure>
                         <p class="result-card__title" data-i18n="taskTwoTitle">Завдання 2 — Instagram-рілс</p>
                     </article>
@@ -212,8 +212,16 @@
 <article class="process-step" data-reveal><aside class="process-step__meta"><span class="process-step__index">04 / MOTION</span></aside><div class="process-step__copy"><h3 data-i18n="reelAnimationTitle">Від ключових кадрів до відео</h3><p data-i18n="reelAnimationCopy">У Magnific я скористався моделлю Seedance 2.5 і згенерував відеофрагменти на основі ключових кадрів.</p></div></article>
 <article class="process-step" data-reveal><aside class="process-step__meta"><span class="process-step__index">05 / VOICEOVER</span></aside><div class="process-step__copy"><h3 data-i18n="reelVoiceTitle">Озвучка та зведення звуку</h3><p data-i18n="reelVoiceCopy">В ElevenLabs згенерував озвучку. У After Effects виконав зведення звуку із закадровим голосом та ефектами.</p></div></article>
 <article class="process-step" data-reveal><aside class="process-step__meta"><span class="process-step__index">06 / LOGO</span></aside><div class="process-step__copy"><h3 data-i18n="reelEditTitle">Анімація логотипу</h3><p data-i18n="reelEditCopy">Наприкінці відео додав анімацію логотипу Growe Partners, яку створив безпосередньо в After Effects.</p></div></article>
-<article class="process-step" data-reveal><aside class="process-step__meta"><span class="process-step__index">07 / CAPTIONS</span></aside><div class="process-step__copy"><h3 data-i18n="reelCaptionsTitle">Субтитри та композитинг</h3><p data-i18n="reelCaptionsCopy">Завантажив аудіодоріжку в сервіс генерації субтитрів і отримав відео з титрами на зеленому фоні. Прибрав фон ефектом Keylight в After Effects і наклав субтитри на ролик, щоб він залишався зрозумілим без звуку.</p></div></article>
-</div><aside class="process-tools" data-reveal><h3 class="process-eyebrow" data-i18n="reelToolsTitle">Інструменти, сервіси та AI-моделі</h3><ul><li>Adobe After Effects</li><li>Adobe Media Encoder</li><li>Adobe Photoshop</li><li>Figma</li><li>ChatGPT</li><li>Gemini</li><li>Nano Banana</li><li>Adobe Firefly</li><li>Ultimate Vocal Remover</li><li>Suno</li><li>ElevenLabs</li><li>Magnific</li><li>Seedance 2.5</li><li>Envato Elements</li><li data-i18n="reelSubtitleService">Сервіс генерації субтитрів</li></ul></aside><section class="reel-time" aria-labelledby="reel-time-title" data-reveal><h3 class="process-eyebrow" id="reel-time-title" data-i18n="reelTimeTitle">Орієнтовний час роботи</h3><dl><div><dt data-i18n="reelTimeResearch">Знайомство з брендом і пошук матеріалів</dt><dd data-i18n="reelTimeResearchValue">≈3–4 год</dd></div><div><dt data-i18n="reelTimeScript">Сценарій</dt><dd data-i18n="reelTimeScriptValue">≈20 хв</dd></div><div><dt data-i18n="reelTimeAudio">Генерація та робота зі звуком: SFX, voiceover, музика</dt><dd data-i18n="reelTimeHour">≈1 год</dd></div><div><dt data-i18n="reelTimeFrames">Генерація ключових кадрів</dt><dd data-i18n="reelTimeFramesValue">≈2 год</dd></div><div><dt data-i18n="reelTimeAnimation">Генерація відеофрагментів</dt><dd data-i18n="reelTimeHour">≈1 год</dd></div><div><dt data-i18n="reelTimeCaptions">Субтитри</dt><dd data-i18n="reelTimeCaptionsValue">≈10–15 хв</dd></div><div><dt data-i18n="reelTimeEdit">Монтаж і зведення</dt><dd data-i18n="reelTimeEditValue">≈30 хв</dd></div></dl></section></div></div></section>
+<article class="process-step" data-reveal><aside class="process-step__meta"><span class="process-step__index">07 / CAPTIONS</span></aside><div class="process-step__copy"><h3 data-i18n="reelCaptionsTitle">Субтитри та композитинг</h3><p data-i18n="reelCaptionsCopy">Завантажив аудіодоріжку в сервіс генерації субтитрів VEED.io і отримав відео з титрами на зеленому фоні. Прибрав фон ефектом Keylight в After Effects і наклав субтитри на ролик, щоб він залишався зрозумілим без звуку.</p></div></article>
+</div><aside class="process-tools" data-reveal><h3 class="process-eyebrow" data-i18n="reelToolsTitle">Інструменти, сервіси та AI-моделі</h3><ul><li>Adobe After Effects</li><li>Adobe Media Encoder</li><li>Adobe Photoshop</li><li>Figma</li><li>ChatGPT</li><li>Gemini</li><li>Nano Banana</li><li>Adobe Firefly</li><li>Ultimate Vocal Remover</li><li>Suno</li><li>ElevenLabs</li><li>Magnific</li><li>Seedance 2.5</li><li>Envato Elements</li><li data-i18n="reelSubtitleService">VEED.io</li></ul></aside><section class="reel-time" aria-labelledby="reel-time-title" data-reveal><h3 class="process-eyebrow" id="reel-time-title" data-i18n="reelTimeTitle">Орієнтовний час роботи</h3><dl><div><dt data-i18n="reelTimeResearch">Знайомство з брендом і пошук матеріалів</dt><dd data-i18n="reelTimeResearchValue">≈3–4 год</dd></div><div><dt data-i18n="reelTimeScript">Сценарій</dt><dd data-i18n="reelTimeScriptValue">≈20 хв</dd></div><div><dt data-i18n="reelTimeAudio">Генерація та робота зі звуком: SFX, voiceover, музика</dt><dd data-i18n="reelTimeHour">≈1 год</dd></div><div><dt data-i18n="reelTimeFrames">Генерація ключових кадрів</dt><dd data-i18n="reelTimeFramesValue">≈3 год</dd></div><div><dt data-i18n="reelTimeAnimation">Генерація відеофрагментів</dt><dd data-i18n="reelTimeAnimationValue">≈2 год</dd></div><div><dt data-i18n="reelTimeCaptions">Субтитри</dt><dd data-i18n="reelTimeCaptionsValue">≈10–15 хв</dd></div><div><dt data-i18n="reelTimeEdit">Монтаж і зведення</dt><dd data-i18n="reelTimeEditValue">≈30 хв</dd></div></dl></section>
+<figure class="asset-slot asset-slot--portrait reel-player reel-player--final" data-reel-player>
+                            <div class="asset-slot__stage">
+                                <video controls playsinline preload="metadata" poster="assets/cover.png?v=finished-reel-1"><source src="assets/1080x1920.mp4" type="video/mp4"></video>
+                                <button class="video-play" type="button" aria-label="Відтворити відео" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                            </div>
+                            <figcaption><span data-i18n="videoWithSound">Відео</span><span>1080 × 1920</span></figcaption>
+                        </figure>
+</div></div></section>
     </main>
 
     <footer class="site-footer">
@@ -226,7 +234,7 @@
 
     <script src="js/plugins/gsap.min.js"></script>
     <script src="js/plugins/ScrollTrigger.min.js"></script>
-    <script src="js/main.js?v=reel-copy-3"></script>
+    <script src="js/main.js?v=finished-reel-1"></script>
     <script src="js/hud.js?v=full-header-2"></script>
 </body>
 </html>
