@@ -11,7 +11,7 @@
     <link rel="preload" href="assets/fonts/pt-mono-regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="css/style.css?v=card-alignment-1">
     <link rel="stylesheet" href="css/hud.css?v=full-header-2">
-    <link rel="stylesheet" href="css/carousel-case.css?v=finished-reel-1">
+    <link rel="stylesheet" href="css/carousel-case.css?v=process-video-1">
 </head>
 <body>
     <div class="preloader" aria-hidden="true">
@@ -93,7 +93,7 @@
                         <div class="card-number">02</div>
                         <figure class="asset-slot asset-slot--portrait reel-player" data-reel-player>
                             <div class="asset-slot__stage">
-                                <video controls playsinline preload="metadata" poster="assets/cover.png?v=finished-reel-1"><source src="assets/1080x1920.mp4" type="video/mp4"></video>
+                                <video controls playsinline preload="metadata" poster="assets/cover.png?v=finished-reel-1"><source src="assets/1080x1920.mp4?v=reel-2" type="video/mp4"></video>
                                 <button class="video-play" type="button" aria-label="Відтворити відео" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
                             </div>
                             <figcaption><span data-i18n="videoWithSound">Відео</span><span>1080 × 1920</span></figcaption>
@@ -141,9 +141,8 @@
                         </div>
                     </article>
                     <figure class="process-loop" data-reveal>
-                        <video data-decorative-video autoplay loop muted playsinline preload="metadata" poster="assets/process-placeholder.webp" aria-hidden="true" tabindex="-1"><source src="assets/process-placeholder.webm" type="video/webm"></video>
-                        <figcaption><span class="process-eyebrow" data-i18n="carouselVideoLabel">Процес роботи</span><span class="process-loop__title" data-i18n="carouselVideoSoon">Відео процесу — незабаром</span><span class="process-loop__note" data-i18n="carouselVideoNote">Тимчасове прев’ю</span></figcaption>
-                        <span class="process-loop__ratio" aria-hidden="true">16:9</span>
+                        <video data-decorative-video autoplay loop muted playsinline preload="metadata" aria-hidden="true" tabindex="-1"><source src="assets/html%20to%20figma.mp4" type="video/mp4"></video>
+                        <figcaption data-i18n="carouselVideoLabel">Процес роботи</figcaption>
                     </figure>
                     <article class="process-step" data-reveal>
                         <aside class="process-step__meta"><span class="process-step__index">02 / COVER</span><span class="process-time" data-i18n="carouselCoverTime">≈25 хв</span></aside>
@@ -216,7 +215,7 @@
 </div><aside class="process-tools" data-reveal><h3 class="process-eyebrow" data-i18n="reelToolsTitle">Інструменти, сервіси та AI-моделі</h3><ul><li>Adobe After Effects</li><li>Adobe Media Encoder</li><li>Adobe Photoshop</li><li>Figma</li><li>ChatGPT</li><li>Gemini</li><li>Nano Banana</li><li>Adobe Firefly</li><li>Ultimate Vocal Remover</li><li>Suno</li><li>ElevenLabs</li><li>Magnific</li><li>Seedance 2.5</li><li>Envato Elements</li><li data-i18n="reelSubtitleService">VEED.io</li></ul></aside><section class="reel-time" aria-labelledby="reel-time-title" data-reveal><h3 class="process-eyebrow" id="reel-time-title" data-i18n="reelTimeTitle">Орієнтовний час роботи</h3><dl><div><dt data-i18n="reelTimeResearch">Знайомство з брендом і пошук матеріалів</dt><dd data-i18n="reelTimeResearchValue">≈3–4 год</dd></div><div><dt data-i18n="reelTimeScript">Сценарій</dt><dd data-i18n="reelTimeScriptValue">≈20 хв</dd></div><div><dt data-i18n="reelTimeAudio">Генерація та робота зі звуком: SFX, voiceover, музика</dt><dd data-i18n="reelTimeHour">≈1 год</dd></div><div><dt data-i18n="reelTimeFrames">Генерація ключових кадрів</dt><dd data-i18n="reelTimeFramesValue">≈3 год</dd></div><div><dt data-i18n="reelTimeAnimation">Генерація відеофрагментів</dt><dd data-i18n="reelTimeAnimationValue">≈2 год</dd></div><div><dt data-i18n="reelTimeCaptions">Субтитри</dt><dd data-i18n="reelTimeCaptionsValue">≈10–15 хв</dd></div><div><dt data-i18n="reelTimeEdit">Монтаж і зведення</dt><dd data-i18n="reelTimeEditValue">≈30 хв</dd></div></dl></section>
 <figure class="asset-slot asset-slot--portrait reel-player reel-player--final" data-reel-player>
                             <div class="asset-slot__stage">
-                                <video controls playsinline preload="metadata" poster="assets/cover.png?v=finished-reel-1"><source src="assets/1080x1920.mp4" type="video/mp4"></video>
+                                <video controls playsinline preload="metadata" poster="assets/cover.png?v=finished-reel-1"><source src="assets/1080x1920.mp4?v=reel-2" type="video/mp4"></video>
                                 <button class="video-play" type="button" aria-label="Відтворити відео" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
                             </div>
                             <figcaption><span data-i18n="videoWithSound">Відео</span><span>1080 × 1920</span></figcaption>
@@ -234,7 +233,7 @@
 
     <script src="js/plugins/gsap.min.js"></script>
     <script src="js/plugins/ScrollTrigger.min.js"></script>
-    <script src="js/main.js?v=finished-reel-1"></script>
+    <script src="js/main.js?v=process-video-1"></script>
     <script src="js/hud.js?v=full-header-2"></script>
 </body>
 </html>

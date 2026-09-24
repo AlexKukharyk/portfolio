@@ -21,11 +21,8 @@
 .process-step__copy p, .process-section-copy p { margin: 0; color: var(--secondary); font-size: clamp(16px, 1.4vw, 19px); line-height: 1.65; }
 .process-step__copy p + p { margin-top: 18px; }
 .process-loop { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); background: var(--body); }
-.process-loop video { display: block; width: 100%; height: 100%; object-fit: cover; }
-.process-loop figcaption { position: absolute; left: 8.5%; bottom: 13%; right: 8.5%; display: grid; gap: 12px; pointer-events: none; }
-.process-loop__title { color: var(--secondary); font-size: clamp(18px, 3vw, 40px); line-height: 1.15; letter-spacing: -.03em; }
-.process-loop__note { color: var(--secondary); font: 11px/1.5 var(--mono); }
-.process-loop__ratio { position: absolute; right: 28px; top: 24px; color: var(--brand-dark); font: 11px var(--mono); }
+.process-loop video { display: block; width: 100%; height: 100%; object-fit: contain; }
+.process-loop figcaption { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .process-section-copy .process-eyebrow { margin-bottom: 20px; }
 .process-type { min-width: 0; }
 .type-specimen { width: 100%; margin-top: 28px; border: 1px solid var(--line); background: var(--body); }
@@ -72,10 +69,6 @@ a.static-gallery__media { display: block; cursor: zoom-in; }
     .type-sample__italic, .type-sample__glyphs { justify-self: end; font-size: 27px; }
     .process-logo { grid-template-columns: 1fr; gap: 28px; padding-top: 28px; }
     .process-logo__figure { width: min(100%, 280px); }
-    .process-loop figcaption { gap: 7px; bottom: 10%; }
-    .process-loop figcaption .process-eyebrow { font-size: 9px; }
-    .process-loop__note { font-size: 9px; }
-    .process-loop__ratio { top: 12px; right: 14px; font-size: 9px; }
     .process-tools li { font-size: 11px; }
     .gallery-heading { margin-top: 48px; }
 }
@@ -85,7 +78,6 @@ a.static-gallery__media { display: block; cursor: zoom-in; }
     .type-sample { grid-template-columns: 55px minmax(0, 1fr) minmax(0, 1fr); gap: 8px; padding-inline: 16px; }
     .type-sample__word { font-size: 38px; }
     .type-sample__italic, .type-sample__glyphs { font-size: 22px; }
-    .process-loop__title { font-size: 17px; }
 }
 
 
